@@ -1,0 +1,13 @@
+.cover {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--secondary);
+    /* transition-delay: 4s; */
+    animation: cover-out 2s ease;
+}
+
+@keyframes cover-out {
+    0% {width: 100vw;}
+    50% {width: 100vw;}
+    100% {width: 0vw;}
+}

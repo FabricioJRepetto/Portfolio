@@ -1,0 +1,43 @@
+.home-container {
+    /* position: absolute; */
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    /* transform: translate(0%); */
+}
+.home-side-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 80vh;
+    width: 25vw;
+    background-color: var(--secondary);
+    color: var(--primary);
+    margin: 0 5vw;
+    padding-bottom: 4rem;
+    font-family: 'Montserrat', sans-serif;
+}
+.home-side-box h1 {
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.home-menu {
+    height: 80vh;
+    font-family: 'Abril Fatface', cursive;
+}
+.home-menu div {
+    cursor: pointer;
+    height: 33.3%;
+    text-align: justify;
+}
+.home-menu div p {
+    font-size: 16vw;
+    line-height: 24vh;
+    text-align: left;
+    pointer-events: none;
+}
+.home-menu div:hover {
+    color: var(--s);
+}

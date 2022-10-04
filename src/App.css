@@ -1,0 +1,80 @@
+.App {
+    position: relative;
+    overflow: hidden;
+}
+
+.fixed-bar {
+    position: absolute;
+    top: 0;
+    z-index: 20;
+}
+
+.spontlight {
+    position: fixed;
+    z-index: 70;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    background: linear-gradient(155deg, rgba(255,255,255,.25) 0%, rgba(0,0,0,0) 50%);
+    background-blend-mode: screen;
+}
+
+.grain {
+    position: fixed;
+    z-index: 80;
+    top: -300%;
+    left: -150%;
+    height: 600%;
+    width: 600%;
+    -webkit-animation: grain 7s steps(10) infinite;
+    animation: 7000ms steps(10) 0ms infinite normal none running grain;
+    background-image: url('./assets/noise.png');
+    background-size: 200px;
+    background-repeat: repeat;
+    opacity: var(--o);
+    pointer-events: none;
+}
+@keyframes grain {
+    0% {transform: translate(0%, 0%)}
+    10% {transform: translate(-10%, 5%)}
+    20% {transform: translate(5%, -5%)}
+    30% {transform: translate(15%, 0%)}
+    40% {transform: translate(0%, 15%)}
+    50% {transform: translate(-5%, 10%)}
+    60% {transform: translate(-15%, -5%)}
+    70% {transform: translate(5%, 10%)}
+    80% {transform: translate(-10%, -5%)}
+    90% {transform: translate(0%, -15%)}
+    100% {transform: translate(10%, 10%)}
+}
+
+.slide-in {
+    animation: slide-in 1s ease;
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translate(100%, -50%) scale(95%) rotate(20deg) 
+    }
+    30% {
+        opacity: .5;
+        filter:blur(20px);
+        transform: translate(0%, 0%) scale(95%) rotate(0deg)
+    }
+    100% {
+        transform: scale(100%)
+    }
+}
+
+.slide-out {
+    animation: slide-out 1s ease;
+}
+
+@keyframes slide-out {
+    0% {}
+    100% {
+        opacity: .5;
+        filter:blur(20px);
+        transform: translate(-150%, -50%) rotate(-40deg) scale(90%)
+    }
+}
