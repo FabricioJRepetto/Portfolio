@@ -1,0 +1,43 @@
+.box-contact-container {
+    display: flex;
+    justify-content: flex-end;
+    height: calc(80vh * 0.315);
+    width: 25vw;
+    margin: calc(80vh * 0.81) 5vw 10vh 5vw;
+    background-color: var(--primary);
+    color: var(--secondary);
+    text-overflow: hidden;
+    z-index: 30;
+    transition: width 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.box-contact-container-open {
+    width: 90vw;
+}
+
+.box-contact-container p {
+    position: absolute;
+    right: 7.8vw;
+    bottom: 6.6vw;
+    font-family: 'Abril Fatface', cursive;
+    font-size: 16vw;
+    line-height: 24vh;
+    text-align: right;
+    pointer-events: none;
+}
+
+.box-contact-inner {
+    height: 100%;
+    width: 100%;
+    background-color: var(--secondary);
+    transition: width .3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.cursor {
+    width: 1rem;
+    animation: cursor 1s infinite 1s;
+}
+@keyframes cursor {
+    0% {opacity: 1}    
+    50% {opacity: 1}    
+    51% {opacity: 0}  
+    100% {opacity: 0}
+}
