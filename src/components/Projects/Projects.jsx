@@ -1,11 +1,35 @@
-import React from 'react'
+import React, { useEffect, useState} from 'react'
 
-const Projects = () => {
+import './Projects.css'
+
+const Projects = ({box}) => {
+    const [mounted, setMounted] = useState(false);
+    const [open, setOpen] = useState(false)
+
+    useEffect(() => {
+      setTimeout(() => {
+        setOpen(true)
+      }, 10);
+      setTimeout(() => {
+        setMounted(true)
+      }, 700);
+    }, [])
+    
+    useEffect(() => {
+        setOpen(false)
+        setMounted(false)
+    }, [box])
+    
   return (
-    <div>
-        <h1>Projects</h1>
-        <p>Provider ecommerce</p>
-        <p>Dog House spa</p>
+    <div className={`projects-container`}>        
+        <div className={`box-projects ${box === 'p' && open && 'box-projects-open'}`}>
+            <p>Projects</p>
+        </div>
+
+        <div className={`p-cards-container ${box === 'p' && mounted && 'mounted'}`}>
+            <div className="p-card">provider</div>
+            <div className="p-card">dog house</div>
+        </div>        
     </div>
   )
 }

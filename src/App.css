@@ -1,6 +1,6 @@
 .App {
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .fixed-bar {
@@ -9,13 +9,13 @@
     z-index: 20;
 }
 
-.spontlight {
+.spotlight {
     position: fixed;
     z-index: 70;
     width: 100vw;
     height: 100vh;
     pointer-events: none;
-    background: linear-gradient(155deg, rgba(255,255,255,.25) 0%, rgba(0,0,0,0) 50%);
+    background: linear-gradient(155deg, rgba(255,255,255,.25) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,.35) 100%);
     background-blend-mode: screen;
 }
 
@@ -52,29 +52,16 @@
     animation: slide-in 1s ease;
 }
 
-@keyframes slide-in {
+@keyframes slide-in {    
     0% {
-        transform: translate(100%, -50%) scale(95%) rotate(20deg) 
+        transform: translate(100%) scale(95%)
     }
     30% {
         opacity: .5;
         filter:blur(20px);
-        transform: translate(0%, 0%) scale(95%) rotate(0deg)
+        transform: translate(0%) scale(95%)
     }
     100% {
         transform: scale(100%)
-    }
-}
-
-.slide-out {
-    animation: slide-out 1s ease;
-}
-
-@keyframes slide-out {
-    0% {}
-    100% {
-        opacity: .5;
-        filter:blur(20px);
-        transform: translate(-150%, -50%) rotate(-40deg) scale(90%)
     }
 }
