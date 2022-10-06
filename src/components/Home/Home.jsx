@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext } from 'react'
+import React, { useState } from 'react'
 import Projects from '../Projects/Projects'
 import About from '../About/About'
 import Contact from '../Contact/Contact'
@@ -80,11 +80,11 @@ const Home = () => {
                 <p>Projects</p>
             </div>
             <div onClick={()=>transition('a')} 
-                className={`${!menu && box !== 'a' && 'menu-gone-style'}`}>
+                className={`${!menu && 'menu-gone-style'}`}>
                 <p>About</p>
             </div>
            <div onClick={()=>transition('c')} 
-                className={`${!menu && box !== 'c' && 'menu-gone-style'}`}>
+                className={`${!menu && 'menu-gone-style'}`}>
                 <p>Contact</p>
             </div>
         </div>

@@ -41,3 +41,36 @@
     51% {opacity: 0}  
     100% {opacity: 0}
 }
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    height: 50vh;
+    width: 60vw;
+    margin: 10vh 0;
+    color: var(--secondary);
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+    transition: transform 1s ease, opacity .5s ease, filter .7s ease;
+}
+.contact-content p {
+    font-size: 1.5rem;
+    user-select: none;
+}
+.contact-content a {
+    width: fit-content;
+    text-transform: uppercase;
+    font-size: 2rem;
+    text-decoration: none;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+}
+.contact-content a:hover {
+    color: var(--s);
+    
+}

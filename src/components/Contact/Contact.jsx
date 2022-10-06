@@ -26,10 +26,14 @@ const Contact = ({box}) => {
 
     return (
         <div className='projects-container'>
-            {/* <h1>Contact</h1>
-            <p>LinkedIn</p>
-            <p>GitHub</p>
-            <p>eMail</p> */}
+            {mounted && <div className='contact-content mounted'>                
+                <>
+                    <p>email</p>
+                    <a href='mailto:fabricio.j.repetto@gmail.com'>fabricio.j.repetto@gmail.com</a>
+                </>
+                <a href='https://www.linkedin.com/in/fabricio-repetto/' target='_bank'>LinkedIn</a>
+                <a href='https://github.com/FabricioJRepetto' target='_bank'>GitHub</a>
+            </div>}
 
             <div className={`box-contact-container ${open && 'box-contact-container-open'}`}>
                 <div className={`box-contact-inner ${mounted && 'cursor'}`}></div>

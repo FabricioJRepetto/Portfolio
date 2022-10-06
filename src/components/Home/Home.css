@@ -32,7 +32,7 @@
 
 .menu-gone-style {
     filter: blur(20px) !important;
-    opacity: 0 !important;
+    opacity: 0.2 !important;
     pointer-events: none !important;
 }
 
@@ -48,6 +48,7 @@
     background-color: var(--secondary);
     color: var(--primary);
     font-family: 'Montserrat', sans-serif;
+    user-select: none;
     z-index: 10;
     transition: height 1s cubic-bezier(0.25, 1, 0.5, 1), width 1s cubic-bezier(0.25, 1, 0.5, 1), margin 1s cubic-bezier(0.25, 1, 0.5, 1);
 }
@@ -56,13 +57,18 @@
     max-width: 25vw;
     animation: name-fadein .5s ease-in;
 }
+@keyframes name-fadein {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
 .home-side-box h1 {
     font-weight: 300;
     text-transform: uppercase;
 }
-@keyframes name-fadein {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
+.home-side-box p {
+    font-size: 1.5rem;
+    font-weight: 200;
+    text-align: center;
 }
 
 .box-h-position {

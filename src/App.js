@@ -10,7 +10,7 @@ function App() {
     useEffect(() => {
         setTimeout(() => {
             setLanding(false)
-        }, 2000);
+        }, 5000);
     }, [])
 
     return (
