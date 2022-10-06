@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext } from 'react'
+import React, { useState } from 'react'
 import Projects from '../Projects/Projects'
 import About from '../About/About'
 import Contact from '../Contact/Contact'
@@ -44,11 +44,20 @@ const Home = () => {
      }
 
      const backToHome = () => { 
-        setBox('h')
-        setTimeout(() => {
-            setMenu(true)
-            setSection('h')
-        }, 1000);
+        if (box === 'c') {
+            setBox('aux')
+            setTimeout(() => {
+                setMenu(true)
+                setSection('h')
+                setBox('h')
+            }, 1300);
+        } else {
+            setBox('h')
+            setTimeout(() => {
+                setMenu(true)
+                setSection('h')
+            }, 1000);
+        }
       }
 
   return (
@@ -66,13 +75,16 @@ const Home = () => {
         </div>
         
         <div className='home-menu'>
-            <div onClick={()=>transition('p')} className={`${!menu && 'menu-gone-style'}`}>
+            <div onClick={()=>transition('p')} 
+                className={`${!menu && 'menu-gone-style'}`}>
                 <p>Projects</p>
             </div>
-            <div onClick={()=>transition('a')} className={`${!menu && 'menu-gone-style'}`}>
+            <div onClick={()=>transition('a')} 
+                className={`${!menu && 'menu-gone-style'}`}>
                 <p>About</p>
             </div>
-            <div onClick={()=>transition('c')} className={`${!menu && 'menu-gone-style'}`}>
+           <div onClick={()=>transition('c')} 
+                className={`${!menu && 'menu-gone-style'}`}>
                 <p>Contact</p>
             </div>
         </div>

@@ -1,0 +1,76 @@
+.box-contact-container {
+    display: flex;
+    justify-content: flex-end;
+    height: calc(80vh * 0.315);
+    width: 25vw;
+    margin: calc(80vh * 0.81) 5vw 10vh 5vw;
+    background-color: var(--primary);
+    color: var(--secondary);
+    text-overflow: hidden;
+    z-index: 30;
+    transition: width 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.box-contact-container-open {
+    width: 90vw;
+}
+
+.box-contact-container p {
+    position: absolute;
+    right: 7.8vw;
+    bottom: 6.6vw;
+    font-family: 'Abril Fatface', cursive;
+    font-size: 16vw;
+    line-height: 24vh;
+    text-align: right;
+    pointer-events: none;
+}
+
+.box-contact-inner {
+    height: 100%;
+    width: 100%;
+    background-color: var(--secondary);
+    transition: width .3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.cursor {
+    width: 1rem;
+    animation: cursor 1s infinite 1s;
+}
+@keyframes cursor {
+    0% {opacity: 1}    
+    50% {opacity: 1}    
+    51% {opacity: 0}  
+    100% {opacity: 0}
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    height: 50vh;
+    width: 60vw;
+    margin: 10vh 0;
+    color: var(--secondary);
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+    transition: transform 1s ease, opacity .5s ease, filter .7s ease;
+}
+.contact-content p {
+    font-size: 1.5rem;
+    user-select: none;
+}
+.contact-content a {
+    width: fit-content;
+    text-transform: uppercase;
+    font-size: 2rem;
+    text-decoration: none;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+}
+.contact-content a:hover {
+    color: var(--s);
+    
+}

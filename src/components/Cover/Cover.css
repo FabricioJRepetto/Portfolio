@@ -1,13 +1,44 @@
 .cover {
+    position: relative;
     width: 100vw;
     height: 100vh;
     background-color: var(--secondary);
-    /* transition-delay: 4s; */
-    animation: cover-out 2s ease;
+    animation: cover-out 5s ease;
 }
 
 @keyframes cover-out {
     0% {width: 100vw;}
-    50% {width: 100vw;}
+    80% {width: 100vw;}
     100% {width: 0vw;}
+}
+
+.cover-title {
+    display: flex;    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 21rem;
+    opacity: 0;
+    user-select: none;
+    animation: cover-title 5s ease;
+}
+.cover-title h1 {
+    font-weight: 300;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary);
+}
+@keyframes cover-title {
+    0% {opacity: 1;}
+    60% {opacity: 1;}
+    80% {opacity: 0;}
+}
+
+.title-cursor {
+    height: 2.2rem;
+    width: 2px;
+    margin: 0 5px;
+    background-color: var(--primary);
+    animation: cursor 1s infinite 1s;
 }

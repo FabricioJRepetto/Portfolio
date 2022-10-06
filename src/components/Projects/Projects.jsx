@@ -1,6 +1,7 @@
 import React, { useEffect, useState} from 'react'
 
 import './Projects.css'
+import ProjectsCards from './ProjectsCards';
 
 const Projects = ({box}) => {
     const [mounted, setMounted] = useState(false);
@@ -23,12 +24,13 @@ const Projects = ({box}) => {
   return (
     <div className={`projects-container`}>        
         <div className={`box-projects ${box === 'p' && open && 'box-projects-open'}`}>
-            <p>Projects</p>
+            <p className={`projects-title ${mounted && 'projects-title-on'}`}>Projects</p>
         </div>
 
         <div className={`p-cards-container ${box === 'p' && mounted && 'mounted'}`}>
-            <div className="p-card">provider</div>
-            <div className="p-card">dog house</div>
+            <ProjectsCards img={'https://res.cloudinary.com/dsyjj0sch/image/upload/v1665013564/portfolio-preview/provider_dqwgm4.gif'} title={'Provider store'} subtitle={'eCommerce'} text={'Team project. User acount creation and management. Database and API consumption.'} link={'https://providerstore.vercel.app'}/>
+
+            <ProjectsCards img={'https://res.cloudinary.com/dsyjj0sch/image/upload/v1665013245/portfolio-preview/dog_house_favapn.gif'} title={'Dog House'} subtitle={'SPA'} text={'Database and multiple API comsumption. CRUD.'} link={'https://the-dog-house.vercel.app'}/>
         </div>        
     </div>
   )
