@@ -2,12 +2,16 @@ import React, { useState } from 'react'
 import Projects from '../Projects/Projects'
 import About from '../About/About'
 import Contact from '../Contact/Contact'
+import ThemeButton from '../utils/Buttons/theme/ThemeButton'
+import HomeButton from '../utils/Buttons/home/HomeButton'
+import LanguageButton from '../utils/Buttons/language/LanguageButton'
 
 import '../../index.css'
 import './Home.css'
 
 const Home = () => {
     const [theme, setTheme] = useState('dark');
+    const [lang, setLang] = useState('Es')
     const [section, setSection] = useState('h');
     const [box, setBox] = useState('h');
     const [menu, setMenu] = useState(true);
@@ -32,6 +36,9 @@ const Home = () => {
 
         theme === 'light' ? setTheme('dark') : setTheme('light');
     }
+    const changeLang = () => {
+        lang === 'Es' ? setLang('En') : setLang('Es')
+     }
 
     const transition = (param) => {
         setMenu(false)
@@ -56,13 +63,14 @@ const Home = () => {
                 setSection('h')
             }, 1000);
         }
-      }
+      }    
 
   return (
     <div className={`home-container slide-in`}>
         <div className='fixed-bar'>
-            <button onClick={changeTheme}>@</button>
-            <button onClick={backToHome}>#</button>
+            <HomeButton section={box} goHome={backToHome}/>
+            <ThemeButton theme={theme} change={changeTheme}/>
+            <LanguageButton lang={'Es'} change={changeLang}/>
         </div>
         <div className={`home-side-box box-${box}-position`}>
             {(box === 'h' || box === 'a') && 

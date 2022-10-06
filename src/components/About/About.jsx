@@ -29,6 +29,8 @@ const About = ({box}) => {
                 I am also a photographer, discipline that strengthened my critical eye when designing web interfaces.
             </p>}
 
+            
+
             {mounted && <div className='about-img-container'>
                 <div className='about-images'>
                     <img src="https://res.cloudinary.com/dsyjj0sch/image/upload/v1664731758/logos/react_logo_icon_144942_s39yak.png" 

@@ -4,6 +4,19 @@
     height: 100vh;
 }
 
+.fixed-bar {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    top: 2vh;
+    width: 98vw;
+    z-index: 20;
+}
+.fixed-bar > * {
+    margin-left: 1rem;
+}
+
 .home-menu {
     position: absolute;
     right: 5vw;

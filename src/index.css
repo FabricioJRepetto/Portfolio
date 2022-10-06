@@ -236,6 +236,11 @@ code {
     monospace;
 }
 
+button {
+    background: none;
+    border: none;
+}
+
 * {
     transition: color .2s ease;
     transition: background-color .2s ease;

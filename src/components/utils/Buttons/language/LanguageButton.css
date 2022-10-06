@@ -1,0 +1,22 @@
+.language-button-container {
+    position: relative;
+    width: 2.125rem;
+    max-height: 2.125rem;
+    max-width: 2.125rem;
+    z-index: 50;
+    cursor: pointer;
+    overflow: clip;
+}
+
+.first {
+    margin: 0%;
+    height: 2.125rem;
+    line-height: 1;
+    font-size: 2rem;
+    font-weight: 600;
+    transition: margin .25s cubic-bezier(0.11, 0, 0.5, 0);
+}
+.second {
+    /* position: absolute; */
+    margin: -100% 0 0 0;
+}
