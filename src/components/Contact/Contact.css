@@ -33,7 +33,7 @@
 }
 .cursor {
     width: 1rem;
-    animation: cursor 1s infinite 1s;
+    animation: cursor 1s infinite .5s;
 }
 @keyframes cursor {
     0% {opacity: 1}    

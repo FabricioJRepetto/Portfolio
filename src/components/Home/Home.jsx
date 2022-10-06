@@ -18,13 +18,11 @@ const Home = () => {
         const themes = {
             light: {
                 p: '#F9F5EB',
-                s: '#0d1218',
-                o: .3
+                s: '#0d1218'
             },
             dark: {
                 p: '#0d1218',
-                s: '#F9F5EB',
-                o: .15,
+                s: '#F9F5EB'
             }
         }
 

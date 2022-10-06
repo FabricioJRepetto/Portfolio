@@ -87,16 +87,29 @@
 }
 .card-head p {
     font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
 .card-head a {
     text-decoration: none;
     color: var(--primary);
     font-size: 1rem;
     font-weight: 400;
+    margin-right: 1rem;
+}
+.card-head span {
+    color: var(--primary);
+    font-size: 1rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+.card-head a:hover {
+  color: var(--s);
+}
+.card-head span:hover {
+  color: var(--s);
 }
 
 .projects-cards img {
     max-height: 15rem;
     width: auto;
-    /* filter: grayscale(50%); */
 }

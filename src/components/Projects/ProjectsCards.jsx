@@ -19,7 +19,11 @@ const ProjectsCards = (props) => {
 
             <div>
                 <p>{text}</p>
-                <a href={link} target='_blank' rel='noreferrer'>visit deploy</a>
+                    
+                <div>
+                    <a href={link} target='_blank' rel='noreferrer'>visit page</a>
+                    <span href={link} target='_blank' rel='noreferrer'>detailed info</span>
+                </div>
             </div>
         </div>
         <img src={img} alt="preview" />        
