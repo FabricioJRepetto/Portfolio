@@ -244,4 +244,10 @@ button {
 * {
     transition: color .2s ease;
     transition: background-color .2s ease;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
 }

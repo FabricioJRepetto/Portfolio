@@ -7,7 +7,6 @@ const Cover = () => {
     const [title, setTitle] = useState('')
 
     useEffect(() => {
-        // let name = ['f','a','b','r','i','c','i','o'];
         let name = 'fabricio repetto'
         let i = 0;
 

@@ -4,7 +4,6 @@
     height: calc(80vh * 0.315);
     width: 25vw;
     margin: calc(80vh * 0.81) 5vw 10vh 5vw;
-    background-color: var(--primary);
     color: var(--secondary);
     text-overflow: hidden;
     z-index: 30;

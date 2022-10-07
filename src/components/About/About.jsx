@@ -1,15 +1,65 @@
 import React, { useEffect, useState } from 'react';
+import { useRef } from 'react';
 
 import './About.css'
-
 const About = ({box}) => {
     const [mounted, setMounted] = useState(false);
     const [show, setShow] = useState(0);
+    const slider = useRef(null);
+
+    const SKILLS = [
+        'JavaScript',
+        'React',
+        'Redux',
+        'Node.js',
+        'Express',
+        'MongoDB',
+        'Mongoose',
+        'PostgreSQL',
+        'Sequelize',
+        'HTML',
+        'CSS',
+        'GIT',
+        'Scrum',
+        'Potoshop',
+        'Illustrator',
+    ]
+
+    const sliderInterval = () => { 
+        if (!slider.current) {
+            slider.current = setInterval(() => {
+                next();            
+            }, 3000);            
+        }
+     };
+
+    let aux = 0;
+    const next = () => {
+        console.log('show ', show);
+        if (aux === 8) {
+            setShow(0)
+            aux = 0
+        } else {
+            setShow(aux + 1)
+            aux++
+        }
+    }
+
+     const stopSlideTimer = () => {
+        if (slider.current) {
+            clearInterval(slider.current);
+            slider.current = null;
+        }
+    };
 
     useEffect(() => {
+        sliderInterval();
         setTimeout(() => {
             setMounted(true)
         }, 1000);
+
+        return () => stopSlideTimer();
+        // eslint-disable-next-line
     }, [])
     
     useEffect(() => {
@@ -19,29 +69,35 @@ const About = ({box}) => {
   return (
     <div className={`projects-container`}>
         <div className={`box-about`}>
-            {<p className={`about-text ${mounted && 'about-text-visible'}`}>
-                I am a self-taught Full Stack Programmer
-                focused on JavaScript technologies.<br/>
-                Looking for my first work experience in the IT world.<br/><br/>
-                I am still studying (you never stop learning) and developing applications mainly with react. 
-                I love to investigate and learn how to take advantages of new tools.<br/>
-                I am constantly looking for new ideas, opportunities, and experiences to improve myself as a developer.<br/><br/>
-                I am also a photographer, discipline that strengthened my critical eye when designing web interfaces.
-            </p>}
 
-            
+            <div className={`about-content ${mounted && 'about-content-visible'}`}>
+                <p className={`about-text`}>
+                    I am a self-taught Full Stack Programmer
+                    focused on JavaScript technologies.<br/>
+                    Looking for my first work experience in the IT world.<br/><br/>
+                    I am still studying (you never stop learning) and developing applications mainly with react. 
+                    I love to investigate and learn how to take advantages of new tools.<br/>
+                    I am constantly looking for new ideas, opportunities, and experiences to improve myself as a developer.<br/><br/>
+                    I am also a photographer, discipline that strengthened my critical eye when designing web interfaces.
+                </p>
+                <div className='skills-container'>
+                    {SKILLS.map(s => (
+                        <div className='skill-card'>{s}</div>
+                    ))}
+                </div>
+            </div>
 
             {mounted && <div className='about-img-container'>
                 <div className='about-images'>
-                    <img src="https://res.cloudinary.com/dsyjj0sch/image/upload/v1664731758/logos/react_logo_icon_144942_s39yak.png" 
-                    alt="React" className={`${show === 0 && 'about-img-visible'}`}/>
-                    <img src="https://res.cloudinary.com/dsyjj0sch/image/upload/v1664731758/logos/redux_icon_132038_oxunha.png" alt="Redux" className={`${show === 1 && 'about-img-visible'}`}/>
-                    <img src="https://res.cloudinary.com/dsyjj0sch/image/upload/v1664732208/logos/nodejs-logo_txb8hq.png" alt="node.js" className={`${show === 2 && 'about-img-visible'}`}/>
-                    <img src="https://res.cloudinary.com/dsyjj0sch/image/upload/v1664731759/logos/express_original_logo_icon_146527_wr3iov.png" alt="express" className={`${show === 3 && 'about-img-visible'}`}/>
-                    <img src="https://res.cloudinary.com/dsyjj0sch/image/upload/v1664732027/logos/mongo_db_logo_diovkg.png" alt="MongoDB" className={`${show === 4 && 'about-img-visible'}`}/>
-                    <img src="https://res.cloudinary.com/dsyjj0sch/image/upload/v1665008173/logos/dbs-postgresql_icon-icons.com_50907_ntbipk.png" alt="PostgreSQL" className={`${show === 5 && 'about-img-visible'}`}/>
-                    <img src="https://res.cloudinary.com/dsyjj0sch/image/upload/v1665008173/logos/adb-photoshop_icon-icons.com_50960_ln8civ.png" alt="Photoshop" className={`${show === 6 && 'about-img-visible'}`}/>
-                    <img src="https://res.cloudinary.com/dsyjj0sch/image/upload/v1665008173/logos/adb-illustrator_icon-icons.com_50964_wsxwi0.png" alt="Illustrator" className={`${show === 7 && 'about-img-visible'}`}/>
+                    <div className={`logo-0 ${show === 0 && 'about-img-visible'}`}></div>
+                    <div className={`logo-1 ${show === 1 && 'about-img-visible'}`}></div>
+                    <div className={`logo-2 ${show === 2 && 'about-img-visible'}`}></div>
+                    <div className={`logo-3 ${show === 3 && 'about-img-visible'}`}></div>
+                    <div className={`logo-4 ${show === 4 && 'about-img-visible'}`}></div>
+                    <div className={`logo-5 ${show === 5 && 'about-img-visible'}`}></div>
+                    <div className={`logo-6 ${show === 6 && 'about-img-visible'}`}></div>
+                    <div className={`logo-7 ${show === 7 && 'about-img-visible'}`}></div>
+                    <div className={`logo-8 ${show === 8 && 'about-img-visible'}`}></div>
                 </div>
             </div>}
         </div>

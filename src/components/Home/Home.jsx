@@ -67,16 +67,18 @@ const Home = () => {
 
   return (
     <div className={`home-container slide-in`}>
+
         <div className='fixed-bar'>
             <HomeButton section={box} goHome={backToHome}/>
             <ThemeButton theme={theme} change={changeTheme}/>
             <LanguageButton lang={'Es'} change={changeLang}/>
         </div>
+
         <div className={`home-side-box box-${box}-position`}>
             {(box === 'h' || box === 'a') && 
             <div className='home-side-box-text-container'>
                 <h1>Fabricio Repetto</h1>
-                <p>Full stack developer</p>
+                <p>Front end developer</p>
             </div>}
         </div>
         

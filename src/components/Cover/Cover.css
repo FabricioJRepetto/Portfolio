@@ -14,17 +14,19 @@
 
 .cover-title {
     display: flex;    
+    align-items: center;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 21rem;
+    width: 26rem;
     opacity: 0;
     user-select: none;
     animation: cover-title 5s ease;
 }
 .cover-title h1 {
-    font-weight: 300;
+    font-size: 2.5rem;
+    font-weight: 200;
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
     color: var(--primary);
@@ -36,7 +38,7 @@
 }
 
 .title-cursor {
-    height: 2.2rem;
+    height: 2.5rem;
     width: 2px;
     margin: 0 5px;
     background-color: var(--primary);
