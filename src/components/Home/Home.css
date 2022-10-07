@@ -5,16 +5,19 @@
 }
 
 .fixed-bar {
-    position: absolute;
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    top: 2vh;
-    width: 98vw;
+    top: 0;
+    padding: .5rem 0;
+    width: 100%;
+    background-color: var(--primary);
     z-index: 20;
 }
 .fixed-bar > * {
     margin-left: 1rem;
+    scale: .8;
 }
 
 .home-menu {
@@ -54,7 +57,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    align-items: center;
+    align-items: flex-start;
     align-self: stretch;
     max-height: 80vh;
     margin: 10vh 5vw;
@@ -66,7 +69,7 @@
     transition: height 1s cubic-bezier(0.25, 1, 0.5, 1), width 1s cubic-bezier(0.25, 1, 0.5, 1), margin 1s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .home-side-box-text-container {
-    padding-bottom: 4rem;
+    padding: 4rem;
     max-width: 25vw;
     animation: name-fadein .5s ease-in;
 }
