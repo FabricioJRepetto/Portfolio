@@ -1,8 +1,38 @@
 import React from 'react'
+import { useState } from 'react'
+import { useRef } from 'react'
+import { useEffect } from 'react'
 
 import './details.css'
 
 const Provider = ({close}) => {
+    const scroll = useRef(null)
+    let maxScroll = 0
+    const [scrolled, setScrolled] = useState(0)
+
+    const scroller = () => {
+        let ele = document.getElementById('scrollContainer');
+        
+        console.log(`%c ${Math.abs(ele.scrollTop * 100) / maxScroll} `, 'background-color:#2effd2; color: #000000; font-weight: bold;');
+        setScrolled(Math.abs(ele.scrollTop * 100) / maxScroll);        
+     }
+
+
+    useEffect(() => {
+        let scrollContainer
+        if (scroll) {            
+            scrollContainer = document.getElementById('scrollContainer')
+            let aux = Math.abs(scrollContainer.scrollHeight - scrollContainer.clientHeight) + 110;
+
+            maxScroll = aux;
+            console.log(maxScroll);
+            scrollContainer.addEventListener('scroll', scroller)
+        }
+
+        return () => scrollContainer.removeEventListener('scroll', scroller)        
+        // eslint-disable-next-line
+    }, [])    
+
   return (
     <div className='project-details-container'>
         <button onClick={close}>cerrar</button>
@@ -12,40 +42,45 @@ const Provider = ({close}) => {
             <h2>eCommerce</h2>
         </div>
 
-        <div className='p-details-content'>
-            <section>
-                <h2>What is Provider?</h2>
-                <p>
-                    This is a team project developed by two members. The objective was to create a totally functional eCommerce with the usual features offered by big stores like amazon, eBay or Mercadolibre.
-                </p>
-            </section>
-            <section>
-                <h2>How did I contribut to this project?</h2>
-                <p>
-                    I was involved in the development of the overall backend structure, several API enpoints and database models/collections (using express and Mongoose).<br/> The frontend was divided by task, but I would like to mention the following features I've created with the <b>main goal of improving the user experience and engagement with the application</b>:<br/>
-                    A system of automatic random daily sales.<br/>
-                    Sales finder, which collects real products on discount (from Mercadolibre).<br/>
-                    Suggestions based on the last products the user visited. This shows to the user several products witch discounts or, at least, with free shipping.<br/>
-                    Notifications to alert the user about their sales, ratings and shipping arrivals among others events.<br/>
-                    Metrics about their published products.<br/>
-                    Several components and sections designs, such as the carousel component or the Premium section.
-                </p>
-            </section>
-            <section>
-                <h2>Users acounts</h2>
-                <p>
-                    We implemented two sign in methods.<br/>
-                    The classic, via email, and the authorization with Google. Both create an account with basic information about the user.<br/> Verified users can update their account details, such as thei avatar, user name, address and first name and surname.<br/> They are also allowed to perform purchases, comment and rate products, add products to wishlist and even publish their own products for sale (metrics about publications can be found on the acording profile section).
-                </p>
-            </section>
-            <section>
-                <h2>Payment flow</h2>
-                <p>
-                    Provider store counts with two checkouts for payments, Stripe and Mercadopago (both in test mode).<br/> Users can add multiple products to the cart or quickly buy one. When they select a payment method, an order is generated and stored on the database, we use this information to create a payment session, when it's ready, we redirect the user to the external checkout page. If the payment is completed successfully, Stripe/Mercadopago notify our the backend and we update the user's order with a payment date and a delivery date, the correspondent products stock and notify the seller (if the seller is a user).<br/> At this point, the user can post a review about the products they bought.
-                </p>
-            </section>
-            
-            <img src="https://res.cloudinary.com/dsyjj0sch/image/upload/v1659650791/PROVIDER_LOGO_glitch_aberration_kt2hyv.png" alt="provider logo" />
+        <div className='details-text-container'>
+            <div className='scroll-bar' style={{top: `${scrolled}%`}}></div>
+            <div className='p-details-content' id='scrollContainer' ref={scroll}>
+                <section>
+                    <h2>What is Provider?</h2>
+                    <p>
+                        This is a team project developed by two members. The objective was to create a totally functional eCommerce with the usual features offered by big stores like amazon, eBay or Mercadolibre.
+                    </p>
+                </section>
+                <section>
+                    <h2>How did I contribut to this project?</h2>
+                    <p>
+                        I was involved in the development of the overall backend structure, several API enpoints and database models/collections (using express and Mongoose).<br/> The frontend was divided by task, but I would like to mention the following features I've created with the <b>main goal of improving the user experience and engagement with the application</b>:<br/>
+                        A system of automatic random daily sales.<br/>
+                        Sales finder, which collects real products on discount (from Mercadolibre).<br/>
+                        Suggestions based on the last products the user visited. This shows to the user several products witch discounts or, at least, with free shipping.<br/>
+                        Notifications to alert the user about their sales, ratings and shipping arrivals among others events.<br/>
+                        Metrics about their published products.<br/>
+                        Several components and sections designs, such as the carousel component or the Premium section.
+                    </p>
+                </section>
+                <section>
+                    <h2>Users acounts</h2>
+                    <p>
+                        We implemented two sign in methods.<br/>
+                        The classic, via email, and the authorization with Google. Both create an account with basic information about the user.<br/> Verified users can update their account details, such as thei avatar, user name, address and first name and surname.<br/> They are also allowed to perform purchases, comment and rate products, add products to wishlist and even publish their own products for sale (metrics about publications can be found on the acording profile section).
+                    </p>
+                </section>
+                <section>
+                    <h2>Payment flow</h2>
+                    <p>
+                        Provider store counts with two checkouts for payments, Stripe and Mercadopago (both in test mode).<br/> Users can add multiple products to the cart or quickly buy one. When they select a payment method, an order is generated and stored on the database, we use this information to create a payment session, when it's ready, we redirect the user to the external checkout page. If the payment is completed successfully, Stripe/Mercadopago notify our the backend and we update the user's order with a payment date and a delivery date, the correspondent products stock and notify the seller (if the seller is a user).<br/> At this point, the user can post a review about the products they bought.
+                    </p>
+                </section>
+
+                <div className='p-details-img-container'>
+                    <img src="https://res.cloudinary.com/dsyjj0sch/image/upload/v1659650791/PROVIDER_LOGO_glitch_aberration_kt2hyv.png" alt="provider logo" />
+                </div>
+            </div>
         </div>
 
     </div>

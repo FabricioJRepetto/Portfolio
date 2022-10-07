@@ -2,7 +2,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    /* width: 100%; */
     height: 100vh;
     padding: 15vh 10vw;
     z-index: 20;
@@ -35,15 +35,25 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-.p-details-content {
-    max-height: 50vh;
-    width: 80%;
-    border-right: 1px solid var(--secondary) ;
-    overflow-y: scroll;
+
+.details-text-container {
+    position: relative;
+    width: 100%;
+    /* border: 1px solid lime; */
+}
+.scroll-bar {
+    position: absolute;
+    height: 100px;
+    width: 1px;
+    background-color: var(--secondary);
+    right: .5vw;
 }
 
-.project-details-container img {
-    max-height: 15vh;
+.p-details-content {
+    max-height: 50vh;
+    /* width: 80%; */
+    border-right: 1px solid var(--secondary) ;
+    overflow-y: scroll;
 }
 
 .project-details-container section {
@@ -55,4 +65,14 @@
 
 .project-details-container section h2 {
     font-weight: 600;    
+}
+
+.p-details-img-container {
+    height: 15vh;
+    max-height: 15vh;
+    min-width: 5rem;
+}
+
+.p-details-img-container img {
+    max-height: 15vh;
 }
