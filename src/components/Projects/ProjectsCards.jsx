@@ -1,5 +1,7 @@
 import React from 'react'
 
+import './Projects.css'
+
 const ProjectsCards = ({data, setDetails}) => {
     const {
         img,
@@ -14,7 +16,7 @@ const ProjectsCards = ({data, setDetails}) => {
     <div className='projects-cards'>
         <div className='card-head'>
             <div>
-                <h1>{title}</h1>
+                <h1 onClick={()=>setDetails(title)}>{title}</h1>
                 <i>{subtitle}</i>
             </div>
 
@@ -27,7 +29,7 @@ const ProjectsCards = ({data, setDetails}) => {
                 </div>
             </div>
         </div>
-        <div className='p-card-img-container'>
+        <div className='p-card-img-container' onClick={()=>setDetails(title)}>
             <img src={img} alt="preview" />
             <div className={`p-card-filler filler${index}`}></div>
         </div>            
