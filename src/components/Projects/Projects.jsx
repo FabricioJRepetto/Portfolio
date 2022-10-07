@@ -8,7 +8,7 @@ import './Projects.css'
 const Projects = ({box}) => {
     const [mounted, setMounted] = useState(false);
     const [open, setOpen] = useState(false);
-    const [details, setDetails] = useState(false)
+    const [details, setDetails] = useState(false);
 
     const PROJECTS = [
         {   
