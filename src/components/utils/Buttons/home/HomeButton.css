@@ -1,0 +1,29 @@
+.home-button-container {
+    position: relative;
+    height: 2rem;
+    width: 2rem;
+    max-height: 2rem;
+    max-width: 2rem;
+    opacity: 1;
+    z-index: 50;
+    cursor: pointer;
+    transition: opacity .15s ease;
+}
+.button-off {
+    opacity: 0;
+    pointer-events: none;
+    cursor: default;
+}
+
+.home {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    height: 1.65rem;
+    width: 1.65rem;
+    clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+    background-color: var(--secondary);
+}

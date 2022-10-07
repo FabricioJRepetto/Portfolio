@@ -4,6 +4,19 @@
     height: 100vh;
 }
 
+.fixed-bar {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    top: 2vh;
+    width: 98vw;
+    z-index: 20;
+}
+.fixed-bar > * {
+    margin-left: 1rem;
+}
+
 .home-menu {
     position: absolute;
     right: 5vw;
@@ -61,13 +74,14 @@
     0% {opacity: 0;}
     100% {opacity: 1;}
 }
+
 .home-side-box h1 {
     font-weight: 300;
     text-transform: uppercase;
 }
 .home-side-box p {
     font-size: 1.5rem;
-    font-weight: 200;
+    font-weight: 300;
     text-align: center;
 }
 

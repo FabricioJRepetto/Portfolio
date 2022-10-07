@@ -1,13 +1,14 @@
 import React from 'react'
 
-const ProjectsCards = (props) => {
+const ProjectsCards = ({data, setDetails}) => {
     const {
         img,
         title,
         subtitle,
         text,
-        link
-    } = props;
+        link,
+        index
+    } = data;
 
   return (
     <div className='projects-cards'>
@@ -19,10 +20,17 @@ const ProjectsCards = (props) => {
 
             <div>
                 <p>{text}</p>
-                <a href={link} target='_blank' rel='noreferrer'>visit deploy</a>
+                    
+                <div>
+                    <a className='link-button' href={link} target='_blank' rel='noreferrer'>visit web site</a>
+                    <span className='link-button' onClick={()=>setDetails(title)}>detailed info</span>
+                </div>
             </div>
         </div>
-        <img src={img} alt="preview" />        
+        <div className='p-card-img-container'>
+            <img src={img} alt="preview" />
+            <div className={`p-card-filler filler${index}`}></div>
+        </div>            
     </div>
   )
 }

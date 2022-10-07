@@ -218,7 +218,6 @@ template {
     --primary: #F9F5EB;
     --secondary: #0d1218;
     --s: #ffa500;
-    --o: .3;
 }
 
 body {
@@ -237,7 +236,18 @@ code {
     monospace;
 }
 
+button {
+    background: none;
+    border: none;
+}
+
 * {
     transition: color .2s ease;
     transition: background-color .2s ease;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
 }

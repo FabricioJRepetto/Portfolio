@@ -4,7 +4,6 @@
     height: calc(80vh * 0.315);
     width: 25vw;
     margin: calc(80vh * 0.81) 5vw 10vh 5vw;
-    background-color: var(--primary);
     color: var(--secondary);
     text-overflow: hidden;
     z-index: 30;
@@ -33,7 +32,7 @@
 }
 .cursor {
     width: 1rem;
-    animation: cursor 1s infinite 1s;
+    animation: cursor 1s infinite .5s;
 }
 @keyframes cursor {
     0% {opacity: 1}    

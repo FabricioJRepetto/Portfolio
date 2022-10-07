@@ -1,0 +1,58 @@
+.project-details-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 15vh 10vw;
+    z-index: 20;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--primary);
+    color: var(--secondary);
+    animation: details-in 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+@keyframes details-in {
+    0% {top: 200%;}
+    50% {top: 0; padding-top: 100%;}
+    100% {padding: 15vh 10vw;}
+}
+
+.project-details-container button {
+    position: absolute;
+}
+
+.project-details-header {
+    margin-bottom: 2rem;
+}
+.project-details-header h1 {
+    font-size: 15vh;
+    font-weight: 200;
+    font-family: 'Abril Fatface', cursive;
+}
+.project-details-header h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.p-details-content {
+    max-height: 50vh;
+    width: 80%;
+    border-right: 1px solid var(--secondary) ;
+    overflow-y: scroll;
+}
+
+.project-details-container img {
+    max-height: 15vh;
+}
+
+.project-details-container section {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    width: 80%;
+    white-space: wrap;
+}
+
+.project-details-container section h2 {
+    font-weight: 600;    
+}

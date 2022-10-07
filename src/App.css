@@ -3,12 +3,6 @@
     /* overflow: hidden; */
 }
 
-.fixed-bar {
-    position: absolute;
-    top: 0;
-    z-index: 20;
-}
-
 .spotlight {
     position: fixed;
     z-index: 70;
@@ -31,7 +25,7 @@
     background-image: url('./assets/noise.png');
     background-size: 200px;
     background-repeat: repeat;
-    opacity: var(--o);
+    opacity: .15;
     pointer-events: none;
 }
 @keyframes grain {

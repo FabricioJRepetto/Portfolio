@@ -1,5 +1,6 @@
 .box-about {
     display: flex;
+    flex-direction: column;
     justify-content: flex-end;
     height: 80vh;
     width: 90vw;
@@ -12,18 +13,45 @@
 .box-about-open {
     width: 90vw;
 }
-.about-text {
-    padding: 10vh;
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;    
     width: 60%;
+    height: 100%;
     opacity: 0;
+    transition: opacity .3s ease;
+}
+.about-content-visible {
+    opacity: 1;
+}
+.about-text {
+    padding: 10vh 10vh 5vh 0;
     font-size: 1.5rem;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 200;
-    transition: opacity .35s ease;
+    font-weight: 300;
 }
 
-.about-text-visible {
-    opacity: 1;
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;    
+    padding: 0vh 10vh 5vh 0;
+    height: fit-content;
+}
+.skill-card {
+    width: auto;
+    height: 2rem;
+    padding: .3rem 1rem .0rem 1rem;
+    margin: .5rem;
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--secondary);
+    background-color: var(--primary);
+    user-select: none;
+    border-radius: .5rem;
 }
 
 .about-img-container {
@@ -38,15 +66,62 @@
     width: 5rem;
     max-height: 5rem;
     max-width: 5rem;
+    
 }
-.about-images img {
+.about-images > div {
     opacity: 0;
     position: absolute;
     height: 5rem;
     width: 5rem;
     max-height: 5rem;
     max-width: 5rem;
+    transition: opacity .35s ease;
 }
 .about-img-visible {
     opacity: 1 !important;
+}
+.logo-0 {
+    mask-image: url('https://res.cloudinary.com/dsyjj0sch/image/upload/v1664731758/logos/react_logo_icon_144942_s39yak.png');
+    background-color: var(--primary);
+    mask-size: contain;
+}
+.logo-1 {
+    mask-image: url('https://res.cloudinary.com/dsyjj0sch/image/upload/v1664731758/logos/redux_icon_132038_oxunha.png');
+    background-color: var(--primary);
+    mask-size: contain;
+}
+.logo-2 {
+    mask-image: url('https://res.cloudinary.com/dsyjj0sch/image/upload/v1664732208/logos/nodejs-logo_txb8hq.png');
+    background-color: var(--primary);
+    mask-size: contain;
+}
+.logo-3 {
+    mask-image: url('https://res.cloudinary.com/dsyjj0sch/image/upload/v1664731759/logos/express_original_logo_icon_146527_wr3iov.png');
+    background-color: var(--primary);
+    mask-size: contain;
+}
+.logo-4 {
+    mask-image: url('https://res.cloudinary.com/dsyjj0sch/image/upload/v1664732027/logos/mongo_db_logo_diovkg.png');
+    background-color: var(--primary);
+    mask-size: contain;
+}
+.logo-5 {
+    mask-image: url('https://res.cloudinary.com/dsyjj0sch/image/upload/v1665008173/logos/dbs-postgresql_icon-icons.com_50907_ntbipk.png');
+    background-color: var(--primary);
+    mask-size: contain;
+}
+.logo-6 {
+    mask-image: url('https://res.cloudinary.com/dsyjj0sch/image/upload/v1665082332/logos/sequelize_zfzkz9.png');
+    background-color: var(--primary);
+    mask-size: contain;
+}
+.logo-7 {
+    mask-image: url('https://res.cloudinary.com/dsyjj0sch/image/upload/v1665008173/logos/adb-photoshop_icon-icons.com_50960_ln8civ.png');
+    background-color: var(--primary);
+    mask-size: contain;
+}
+.logo-8 {
+    mask-image: url('https://res.cloudinary.com/dsyjj0sch/image/upload/v1665008173/logos/adb-illustrator_icon-icons.com_50964_wsxwi0.png');
+    background-color: var(--primary);
+    mask-size: contain;
 }
