@@ -68,7 +68,6 @@
     justify-content: space-between;
     align-items: space-between;
     width: 60vw;
-    min-width: 900px;
     margin: 3vh 0;
     font-family: 'Montserrat', sans-serif;
     font-weight: 200;
@@ -117,6 +116,7 @@
 }
 .p-card-img-container {
     position: relative;
+    width: fit-content;
     height: fit-content;
     cursor: pointer;
 }
@@ -160,7 +160,7 @@
 @media (max-width: 1060px) {
     .box-projects {
         width: 2vw;
-        height: 10vh;
+        height: 18vw;
         margin-bottom: 0;
     }
     .box-projects-open {
@@ -175,11 +175,6 @@
     }
     .projects-cards {
         flex-direction: column;
-        width: 100vw;
-        min-width: 0;
-    }
-    .projects-cards img {
-        height: auto;
-        width: 92%;
+        width: 90vw;
     }
 }
