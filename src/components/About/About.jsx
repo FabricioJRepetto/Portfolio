@@ -8,10 +8,9 @@ const About = ({box}) => {
     const [mounted, setMounted] = useState(false);
     const [show, setShow] = useState(0);
     const slider = useRef(null);
-    // const [scrolled, setScrolled] = useState(0)
+    const [scrolled, setScrolled] = useState(0)
     const scrollAbout = useRef(null)
-    // let maxScroll = 0
-    
+    let maxScroll = 0    
 
     const SKILLS = [
         'JavaScript',
@@ -20,9 +19,9 @@ const About = ({box}) => {
         'Node.js',
         'Express',
         'MongoDB',
+        'Sequelize',
         'Mongoose',
         'PostgreSQL',
-        'Sequelize',
         'HTML',
         'CSS',
         'GIT',
@@ -31,25 +30,24 @@ const About = ({box}) => {
         'Illustrator',
     ];
 
-    // const scroller = () => {
-    //     let ele = document.getElementById('scrollAboutContainer');
-    //     setScrolled(Math.abs(ele.scrollTop * 100) / maxScroll);        
-    //  }
+    const scroller = () => {
+        let ele = document.getElementById('scrollAboutContainer');
+        setScrolled(Math.abs(ele.scrollTop * 100) / maxScroll);        
+     }
 
-    // useEffect(() => {
-    //     let scrollContainer
-    //     if (scrollAbout) {            
-    //         scrollContainer = document.getElementById('scrollAboutContainer')
-    //         let aux = Math.abs(scrollContainer.scrollHeight - scrollContainer.clientHeight) + 110;
-    //         // eslint-disable-next-line
-    //         maxScroll = aux;
-    //         console.log(maxScroll);
-    //         scrollContainer.addEventListener('scroll', scroller)
-    //     }
+    useEffect(() => {
+        let scrollContainer
+        if (scrollAbout) {            
+            scrollContainer = document.getElementById('scrollAboutContainer')
+            let aux = Math.abs(scrollContainer.scrollHeight - scrollContainer.clientHeight) + 110;
+            // eslint-disable-next-line
+            maxScroll = aux;
+            scrollContainer.addEventListener('scroll', scroller)
+        }
 
-    //     return () => scrollContainer.removeEventListener('scroll', scroller)        
-    //     // eslint-disable-next-line
-    // }, [])
+        return () => scrollContainer.removeEventListener('scroll', scroller)        
+        // eslint-disable-next-line
+    }, [])
 
     const sliderInterval = () => {
         if (!slider.current) {
@@ -61,7 +59,6 @@ const About = ({box}) => {
 
     let aux = 0;
     const next = () => {
-        console.log('show ', show);
         if (aux === 8) {
             setShow(0)
             aux = 0
@@ -95,32 +92,36 @@ const About = ({box}) => {
   return (
     <div className={`projects-container`}>
         <div className={`box-about`}>
-            
-                <div className={`about-content ${mounted && 'about-content-visible'}`} ref={scrollAbout} id='scrollAboutContainer'>
+                
+            <div className='about-text-container'>
+                {mounted && <div className='about-scroll-bar' style={{top: `${scrolled * 2}%`}}></div>}
+                <div className={`about-content ${mounted && 'about-content-visible'}`}  
+                    ref={scrollAbout} id='scrollAboutContainer'>
                     {lang === 'En' 
-                    ?<p className={`about-text`}>
-                        I am a self-taught Full Stack Programmer
-                        focused on JavaScript technologies.<br/>
-                        Currently looking for my first work experience in the IT world.<br/><br/>
-                        I am still studying (you never stop learning) and developing applications mainly with Eeact. 
-                        I love to investigate and learn how to take advantages of new tools.<br/>
-                        I am constantly looking for new ideas, opportunities and experiences to improve myself as a developer.<br/><br/>
-                        I am also a photographer, discipline that strengthened my critical eye when designing web interfaces.
-                    </p>
-                    :<p className={`about-text`}>
-                        Soy un desarrollador Full stack autodidacta orientado a tecnologías Javascript.<br/>
-                        Actualmente estoy buscando mi primer experiencia laboral en el mundo IT.<br/><br/>
-                        Continúo estudiando (nunca paras de aprender) y desarrollando aplicaciones principalmente en React.
-                        Me encanta investigar y aprender como aprovechar nuevas herramientas.<br/>
-                        Estoy constantemente buscando nuevas ideas, oportunidades y experiencias para mejorar como programador.<br/><br/>
-                        También soy fotógrafo, diciplina que fortaleció mi mirada crítica a la hora de diseñár interfaces para web. 
-                    </p>}
+                        ?<p className={`about-text`}>
+                            I am a self-taught Full Stack Programmer
+                            focused on JavaScript technologies.<br/>
+                            Currently looking for my first work experience in the IT world.<br/><br/>
+                            I am still studying (you never stop learning) and developing applications mainly with Eeact. 
+                            I love to investigate and learn how to take advantages of new tools.<br/>
+                            I am constantly looking for new ideas, opportunities and experiences to improve myself as a developer.<br/><br/>
+                            I am also a photographer, discipline that strengthened my critical eye when designing web interfaces.
+                        </p>
+                        :<p className={`about-text`}>
+                            Soy un desarrollador Full stack autodidacta orientado en tecnologías Javascript.<br/>
+                            Actualmente estoy buscando mi primer experiencia laboral en el mundo IT.<br/><br/>
+                            Continúo estudiando (nunca paras de aprender) y desarrollando aplicaciones principalmente en React.
+                            Me encanta investigar y aprender como aprovechar nuevas herramientas.<br/>
+                            Estoy constantemente buscando nuevas ideas, oportunidades y experiencias para mejorar como programador.<br/><br/>
+                            También soy fotógrafo, diciplina que fortaleció mi mirada crítica a la hora de diseñár interfaces para web. 
+                        </p>}
                     <div className='skills-container'>
                         {SKILLS.map(s => (
                             <div className='skill-card'>{s}</div>
                         ))}
                     </div>
                 </div>
+            </div>
 
                 {mounted && <div className='about-img-container'>
                     <div className='about-images'>

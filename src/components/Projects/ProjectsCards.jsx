@@ -24,8 +24,8 @@ const ProjectsCards = ({data, setDetails, lang}) => {
                 <p>{text}</p>
                     
                 <div>
-                    <a className='link-button' href={link} target='_blank' rel='noreferrer'>{lang === 'En' ? 'visit web site' : 'visitar página'}</a>
-                    <span className='link-button' onClick={()=>setDetails(title)}>{lang === 'En' ? 'detailed info' : 'más detalles'}</span>
+                    <a className='link-button' href={link} target='_blank' rel='noreferrer'>{lang === 'En' ? 'Visit website' : 'Visitar página'}</a>
+                    <span className='link-button' onClick={()=>setDetails(title)}>{lang === 'En' ? 'Details' : 'Detalles'}</span>
                 </div>
             </div>
         </div>

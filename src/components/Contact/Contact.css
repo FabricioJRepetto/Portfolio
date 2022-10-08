@@ -73,3 +73,34 @@
     color: var(--s);
     
 }
+
+@media (max-width: 1060px) {
+    .box-contact-container {
+        width: 2vw;
+    }
+    .box-contact-container-open {
+        width: 90vw;
+    }
+    .box-contact-inner {
+        height: 16vw;
+        align-self: flex-end;
+    }
+
+    .cursor {
+        width: .3rem;
+        height: 16vw;
+        margin-bottom: 1rem;
+    }
+    .contact-content {
+        margin: 10vh auto;
+        width: 90vw;
+        height: 70vh;
+    }
+    .contact-content a {
+        font-size: 5vw;
+        font-weight: 400;
+    }
+    .contact-content p {
+        font-size: 5vw;
+    }
+}

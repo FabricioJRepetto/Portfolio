@@ -17,7 +17,7 @@ const Projects = ({box}) => {
         {   
             title: 'Provider store',
             subtitle: 'eCommerce',
-            text: lang === 'En' ? 'Team project. User acount creation and management. Database and API consumption. CRUD.' : 'Proyecto de equipo. Creación y administración de cuentas de usuario. Consumo de multiples API y base de datos. CRUD.',
+            text: lang === 'En' ? 'Team project. User acount creation and management. Payments.' : 'Proyecto de equipo. Creación y administración de cuentas de usuario. Pagos.',
             link: 'https://providerstore.vercel.app',
             img: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1665013564/portfolio-preview/provider_dqwgm4.gif',
             index: 0
@@ -47,15 +47,16 @@ const Projects = ({box}) => {
     }, [box])
     
   return (
-    <div className={`projects-container`}>        
+    <div className={`projects-container`}>
         <div className={`box-projects ${box === 'p' && open && 'box-projects-open'}`}>
-            <p className={`projects-title ${mounted && 'projects-title-on'}`}>Projects</p>
+            <p className={`projects-title ${mounted && 'projects-title-on'}`}>
+                {lang === 'En' ? 'Projects' : 'Proyectos'}</p>
         </div>
 
         <div className={`p-cards-container ${box === 'p' && mounted && 'mounted'}`}>
             {PROJECTS.map((p) => (
                 <ProjectsCards key={p.title} data={p} setDetails={setDetails} lang={lang}/>
-            ))}            
+            ))}
         </div>
 
         {mounted && <div className="projects-thread"></div>}
