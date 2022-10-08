@@ -5,16 +5,18 @@ import Contact from '../Contact/Contact'
 import ThemeButton from '../utils/Buttons/theme/ThemeButton'
 import HomeButton from '../utils/Buttons/home/HomeButton'
 import LanguageButton from '../utils/Buttons/language/LanguageButton'
+import { useLang } from '../../lang-context'
 
 import '../../index.css'
 import './Home.css'
 
 const Home = () => {
     const [theme, setTheme] = useState('dark');
-    const [lang, setLang] = useState('Es')
     const [section, setSection] = useState('h');
     const [box, setBox] = useState('h');
     const [menu, setMenu] = useState(true);
+
+    const { state: { lang } } = useLang();
 
     const changeTheme = () => {
         let root = document.querySelector(':root');
@@ -35,10 +37,7 @@ const Home = () => {
         root.style.setProperty('--o', themes[theme].o);
 
         theme === 'light' ? setTheme('dark') : setTheme('light');
-    }
-    const changeLang = () => {
-        lang === 'Es' ? setLang('En') : setLang('Es')
-     }
+    }   
 
     const transition = (param) => {
         setMenu(false)
@@ -71,29 +70,37 @@ const Home = () => {
         <div className='fixed-bar'>
             <HomeButton section={box} goHome={backToHome}/>
             <ThemeButton theme={theme} change={changeTheme}/>
-            <LanguageButton lang={'Es'} change={changeLang}/>
+            <LanguageButton />
         </div>
 
         <div className={`home-side-box box-${box}-position`}>
             {(box === 'h' || box === 'a') && 
             <div className='home-side-box-text-container'>
                 <h1>Fabricio Repetto</h1>
-                <p>Front end developer</p>
+                {lang === 'En'
+                    ?<p>Front end developer</p>
+                    :<p>Desarrollador front end</p>}
             </div>}
         </div>
         
         <div className='home-menu'>
             <div onClick={()=>transition('p')} 
                 className={`${!menu && 'menu-gone-style'}`}>
-                <p>Projects</p>
+                {lang === 'En'
+                    ?<p>Projects</p>
+                    :<p>Proyectos</p>}
             </div>
             <div onClick={()=>transition('a')} 
                 className={`${!menu && 'menu-gone-style'}`}>
-                <p>About</p>
+                {lang === 'En'
+                    ?<p>About</p>
+                    :<p>Sobre mi</p>}
             </div>
            <div onClick={()=>transition('c')} 
                 className={`${!menu && 'menu-gone-style'}`}>
-                <p>Contact</p>
+                {lang === 'En'
+                    ?<p>Contact</p>
+                    :<p>Contacto</p>}
             </div>
         </div>
 

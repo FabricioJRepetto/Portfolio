@@ -41,7 +41,9 @@ const Provider = ({close}) => {
 
   return (
     <>
-        <div onClick={closer} className='details-close-button'></div>
+        <div className='details-close-button-container'>
+            <div onClick={closer} className='details-close-button'></div>
+        </div>
         <div className={`project-details-container ${!open && 'details-close'}`}>
 
             <div className='project-details-header'>

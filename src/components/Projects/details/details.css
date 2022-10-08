@@ -97,12 +97,21 @@
     100% {top: 200%;}
 }
 
-.details-close-button {
+.details-close-button-container {
     position: fixed;
-    top: 1vh;
-    right: 7rem;
-    z-index: 30;
-    height: 2rem;
-    width: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    top: 2.5vh;
+    left: 50%;
+    transform: translate(-50%);
+    height: 0;
+    width: 90%;
+    z-index: 90;
+}
+.details-close-button {
+    height: 2.5rem;
+    width: 2.5rem;
+    margin-right: 6.8rem;
     cursor: pointer;
 }

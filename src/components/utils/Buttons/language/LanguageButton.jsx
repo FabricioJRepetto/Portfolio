@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useLang } from '../../../../lang-context';
 
 import './LanguageButton.css'
 
-const LanguageButton = ({language, change}) => {
-    const [lang, setLang] = useState(language)
+const LanguageButton = () => {
+    const { dispatch, state: { lang } } = useLang();
     
     const updateLang = () => { 
-        change();
-        lang === 'Es' ? setLang('En') : setLang('Es');
-     }
+        dispatch({type: 'change'});
+    }
 
   return (
     <div className='language-button-container' onClick={updateLang}>
@@ -18,4 +18,4 @@ const LanguageButton = ({language, change}) => {
   )
 }
 
-export default LanguageButton
+export default LanguageButton;
