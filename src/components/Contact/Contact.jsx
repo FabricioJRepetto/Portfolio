@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
+import { useLang } from '../../lang-context';
 
 import './Contact.css'
 
 const Contact = ({box}) => {
     const [mounted, setMounted] = useState(false);
     const [open, setOpen] = useState(false)
+    const { state: { lang } } = useLang();
 
     useEffect(() => {
       setTimeout(() => {
@@ -37,7 +39,7 @@ const Contact = ({box}) => {
 
             <div className={`box-contact-container ${open && 'box-contact-container-open'}`}>
                 <div className={`box-contact-inner ${mounted && 'cursor'}`}></div>
-                {mounted && <p>Say Hello!</p>}
+                {mounted && <p>{lang === 'En' ? 'Say Hello!' : 'Saludame!'}</p>}
             </div>
         </div>
     )

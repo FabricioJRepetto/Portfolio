@@ -30,6 +30,7 @@
     font-family: 'Abril Fatface', cursive;
 }
 .home-menu div {
+    width: 60vw;
     cursor: pointer;
     height: 33.33%;
     text-align: justify;

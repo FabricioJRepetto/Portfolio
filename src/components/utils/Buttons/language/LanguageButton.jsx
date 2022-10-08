@@ -12,8 +12,8 @@ const LanguageButton = () => {
 
   return (
     <div className='language-button-container' onClick={updateLang}>
-        <div className={`first ${lang === 'Es' && 'second'}`}>Es</div>
-        <div className={`first`}>En</div>
+        <div className={`first ${lang === 'Es' && 'second'}`}>En</div>
+        <div className={`first`}>Es</div>
     </div>
   )
 }

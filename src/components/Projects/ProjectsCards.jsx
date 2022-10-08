@@ -2,7 +2,7 @@ import React from 'react'
 
 import './Projects.css'
 
-const ProjectsCards = ({data, setDetails}) => {
+const ProjectsCards = ({data, setDetails, lang}) => {
     const {
         img,
         title,
@@ -24,8 +24,8 @@ const ProjectsCards = ({data, setDetails}) => {
                 <p>{text}</p>
                     
                 <div>
-                    <a className='link-button' href={link} target='_blank' rel='noreferrer'>visit web site</a>
-                    <span className='link-button' onClick={()=>setDetails(title)}>detailed info</span>
+                    <a className='link-button' href={link} target='_blank' rel='noreferrer'>{lang === 'En' ? 'visit web site' : 'visitar página'}</a>
+                    <span className='link-button' onClick={()=>setDetails(title)}>{lang === 'En' ? 'detailed info' : 'más detalles'}</span>
                 </div>
             </div>
         </div>

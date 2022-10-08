@@ -2,6 +2,7 @@ import React, { useEffect, useState} from 'react'
 import ProjectsCards from './ProjectsCards';
 import Provider from './details/Provider';
 import Dogs from './details/Dogs';
+import { useLang } from '../../lang-context';
 
 import './Projects.css'
 
@@ -10,11 +11,13 @@ const Projects = ({box}) => {
     const [open, setOpen] = useState(false);
     const [details, setDetails] = useState(false);
 
+    const { state: { lang } } = useLang();
+
     const PROJECTS = [
         {   
             title: 'Provider store',
             subtitle: 'eCommerce',
-            text: 'Team project. User acount creation and management. Database and API consumption.',
+            text: lang === 'En' ? 'Team project. User acount creation and management. Database and API consumption. CRUD.' : 'Proyecto de equipo. Creación y administración de cuentas de usuario. Consumo de multiples API y base de datos. CRUD.',
             link: 'https://providerstore.vercel.app',
             img: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1665013564/portfolio-preview/provider_dqwgm4.gif',
             index: 0
@@ -22,7 +25,7 @@ const Projects = ({box}) => {
         {   
             title: 'Dog House',
             subtitle: 'SPA',
-            text: 'Database and multiple API comsumption. CRUD.',
+            text: lang === 'En' ? 'Database and multiple API comsumption. CRUD.' : 'Consumo de multiples API y base de datos. CRUD.',
             link: 'https://the-dog-house.vercel.app',
             img: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1665013245/portfolio-preview/dog_house_favapn.gif',
             index: 1
@@ -51,7 +54,7 @@ const Projects = ({box}) => {
 
         <div className={`p-cards-container ${box === 'p' && mounted && 'mounted'}`}>
             {PROJECTS.map((p) => (
-                <ProjectsCards key={p.title} data={p} setDetails={setDetails}/>
+                <ProjectsCards key={p.title} data={p} setDetails={setDetails} lang={lang}/>
             ))}            
         </div>
 
