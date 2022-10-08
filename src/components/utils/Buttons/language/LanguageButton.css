@@ -1,5 +1,6 @@
 .language-button-container {
     position: relative;
+    top: 2px;
     height: 2.125rem;
     max-height: 2.125rem;
     width: 3rem;

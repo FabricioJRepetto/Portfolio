@@ -94,7 +94,7 @@ const Home = () => {
                 className={`${!menu && 'menu-gone-style'}`}>
                 {lang === 'En'
                     ?<p>About</p>
-                    :<p>Sobre mi</p>}
+                    :<p>Sobre mí</p>}
             </div>
            <div onClick={()=>transition('c')} 
                 className={`${!menu && 'menu-gone-style'}`}>
