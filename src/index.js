@@ -1,15 +1,14 @@
-import React, { createContext } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
+import { LangProvider } from './lang-context';
 
-const Unmount = createContext(false);
+import './index.css';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <React.StrictMode>
-        <Unmount.Provider value={false}>
-            <App />
-        </Unmount.Provider>
-    </React.StrictMode>
+    <LangProvider>
+        <App />
+    </LangProvider>
 );

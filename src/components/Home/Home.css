@@ -10,8 +10,10 @@
     align-items: center;
     justify-content: flex-end;
     top: 0;
+    left: 50%;
+    transform: translate(-50%);
     padding: .5rem 0;
-    width: 100%;
+    width: 90%;
     background-color: var(--primary);
     z-index: 20;
 }
@@ -37,7 +39,7 @@
     transition: opacity .7s ease, filter .7s ease;
 }
 .home-menu div p {
-    font-size: 16vw;
+    font-size: 13vw;
     line-height: 24vh;
     text-align: left;
     pointer-events: none;
