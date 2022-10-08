@@ -2,7 +2,6 @@
     position: fixed;
     top: 0;
     left: 0;
-    /* width: 100%; */
     height: 100vh;
     padding: 10vh 10vw;
     z-index: 10;
@@ -12,8 +11,8 @@
     animation: details-in 1s cubic-bezier(0.25, 1, 0.5, 1);
 }
 @keyframes details-in {
-    0% {top: 200%;}
-    50% {top: 0; padding-top: 100%;}
+    0% {top: 100vh;}
+    50% {top: 0; padding-top: 100vh;}
     100% {padding: 10vh 10vw;}
 }
 
@@ -57,7 +56,6 @@
 
 .p-details-content {
     max-height: 55vh;
-    /* width: 80%; */
     border-right: 1px solid var(--secondary) ;
     overflow-y: scroll;
 }
@@ -114,4 +112,27 @@
     width: 2.5rem;
     margin-right: 6.8rem;
     cursor: pointer;
+}
+
+@media (max-width: 1060px) {
+    .project-details-header h1 {
+        font-size: 20vw;
+        font-weight: 200;
+        width: 90vw;
+        white-space: wrap;
+    }
+    .project-details-header > div {
+        width: 90vw;
+    }
+    .project-details-container section {
+        font-size: 1.1rem;
+        width: 80%;
+        white-space: wrap;
+    }
+    .p-details-img-container {
+        height: 21vh;
+    }
+    .p-details-img-container img {
+        max-height: 100%;
+    }
 }

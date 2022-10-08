@@ -8,20 +8,49 @@
     position: fixed;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
     top: 0;
     left: 50%;
     transform: translate(-50%);
     padding: .5rem 0;
     width: 90%;
-    background-color: var(--primary);
     z-index: 20;
 }
-.fixed-bar > * {
+.fixed-bar-bg {
+    position: absolute;    
+    top: -5%;
+    left: -20%;
+    width: 200vw;
+    height: 3.7rem;
+    background-color: var(--primary);
+}
+.fixed-bar > span {
+    display: flex;
+}
+.fixed-bar > span > * {
     margin-left: 1rem;
     scale: .8;
 }
+.fixed-bar-name {
+    z-index: 20;
+    display: flex;
+    flex-direction: row;
+    opacity: 0;
+    max-height: 2rem;
+    pointer-events: none;
+    align-items: baseline;
+    font-family: 'Montserrat', sans-serif;
+}
+.fixed-bar-name h1 {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+.fixed-bar-name p {
+    margin-left: .5rem;
+}
 
+/*::: MENU :::*/
 .home-menu {
     position: absolute;
     right: 5vw;
@@ -72,8 +101,11 @@
     transition: height 1s cubic-bezier(0.25, 1, 0.5, 1), width 1s cubic-bezier(0.25, 1, 0.5, 1), margin 1s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .home-side-box-text-container {
-    padding: 4rem;
-    max-width: 25vw;
+    padding-bottom: 4rem;
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
     animation: name-fadein .5s ease-in;
 }
 @keyframes name-fadein {
@@ -115,3 +147,57 @@
     width: 25vw;
 }
 
+@media (max-width: 1060px) {
+    .home-side-box-text-container {
+        display: none;
+    }
+    .fixed-bar-name {
+        opacity: 1;
+    }
+    .fixed-bar > span > * {
+        margin-left: .2rem;
+    }
+
+    /*::: BOX POSITIONS :::*/
+    .box-h-position {
+        width: 2vw;
+    }
+    .box-aux-position {
+        width: 2vw;
+    }
+    .box-p-position {
+        height: 0vh;
+        width: 2vw;
+    }
+    .box-a-position {
+        width: 90vw;
+    }
+    .box-c-position {
+        width: 2vw;
+        margin: calc(90vh) 5vw 10vh 5vw;        
+    }
+
+    /*::: MENU :::*/
+    .home-menu div {
+        width: 80vw;
+    }
+    .home-menu div p {
+        font-size: 16vw;
+    }
+}
+@media (max-width: 720px) {
+    .fixed-bar-name {
+        white-space: nowrap;
+        width: min-content;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .fixed-bar-name h1 {
+        margin-top: 1.2rem;
+        font-size: 1.3rem;
+        font-weight: 500;
+    }
+    .fixed-bar-name p {
+        margin: 0;
+    }
+}

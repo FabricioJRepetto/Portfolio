@@ -68,9 +68,18 @@ const Home = () => {
     <div className={`home-container slide-in`}>
 
         <div className='fixed-bar'>
-            <HomeButton section={box} goHome={backToHome}/>
-            <ThemeButton theme={theme} change={changeTheme}/>
-            <LanguageButton />
+            <div className='fixed-bar-name'>
+                <h1>Fabricio Repetto </h1>
+                {lang === 'En'
+                    ?<p>Front end developer</p>
+                    :<p>Desarrollador front end</p>}
+            </div>
+            <span>
+                <HomeButton section={box} goHome={backToHome}/>
+                <ThemeButton theme={theme} change={changeTheme}/>
+                <LanguageButton />
+            </span>
+            <div className='fixed-bar-bg'></div>
         </div>
 
         <div className={`home-side-box box-${box}-position`}>
