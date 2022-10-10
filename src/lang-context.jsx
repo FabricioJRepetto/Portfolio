@@ -18,7 +18,7 @@ function langReducer(state, action) {
 }
 
 function LangProvider({children}) {
-  const [state, dispatch] = useReducer(langReducer, {lang: 'En'})
+  const [state, dispatch] = useReducer(langReducer, {lang: 'Es'})
   const value = {state, dispatch}
 
   return <LangContext.Provider value={value}>{children}</LangContext.Provider>
