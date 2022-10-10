@@ -25,7 +25,7 @@
     background-image: url('./assets/noise.png');
     background-size: 200px;
     background-repeat: repeat;
-    opacity: .15;
+    opacity: .17;
     pointer-events: none;
 }
 @keyframes grain {

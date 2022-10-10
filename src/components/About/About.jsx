@@ -107,7 +107,7 @@ const About = ({box}) => {
                             I am also a photographer, discipline that strengthened my critical eye when designing web interfaces.
                         </p>
                         :<p className={`about-text`}>
-                            Soy autodidacta que encontró una nueva pasión en la programación, desde el 2021 estoy formandome como desarrollador front end (con conocimientos en back end) orientado a tecnologías Javascript.<br/>
+                            Soy autodidacta que encontró una nueva pasión en la programación, desde el 2021 estoy formandome como desarrollador front end (con conocimientos en back end tambíen) orientado a tecnologías Javascript.<br/>
                             Actualmente estoy buscando mi primer experiencia laboral en el mundo IT.<br/><br/>
                             Continúo estudiando (nunca paras de aprender) y desarrollando aplicaciones principalmente en React.
                             Me encanta investigar y aprender como aprovechar nuevas herramientas.<br/>
