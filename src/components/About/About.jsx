@@ -99,8 +99,7 @@ const About = ({box}) => {
                     ref={scrollAbout} id='scrollAboutContainer'>
                     {lang === 'En' 
                         ?<p className={`about-text`}>
-                            I am a self-taught Full Stack Programmer
-                            focused on JavaScript technologies.<br/>
+                            I am a self-taught who found a new passion in programming, I am forming as a Front end developer (with knowledge on back end too) focused on JavaScript technologies since 2021.<br/>
                             Currently looking for my first work experience in the IT world.<br/><br/>
                             I am still studying (you never stop learning) and developing applications mainly with Eeact. 
                             I love to investigate and learn how to take advantages of new tools.<br/>
@@ -108,7 +107,7 @@ const About = ({box}) => {
                             I am also a photographer, discipline that strengthened my critical eye when designing web interfaces.
                         </p>
                         :<p className={`about-text`}>
-                            Soy un desarrollador Full stack autodidacta orientado en tecnologías Javascript.<br/>
+                            Soy autodidacta que encontró una nueva pasión en la programación, desde el 2021 estoy formandome como desarrollador front end (con conocimientos en back end tambíen) orientado a tecnologías Javascript.<br/>
                             Actualmente estoy buscando mi primer experiencia laboral en el mundo IT.<br/><br/>
                             Continúo estudiando (nunca paras de aprender) y desarrollando aplicaciones principalmente en React.
                             Me encanta investigar y aprender como aprovechar nuevas herramientas.<br/>
