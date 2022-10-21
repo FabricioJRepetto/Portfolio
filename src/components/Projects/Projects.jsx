@@ -17,7 +17,7 @@ const Projects = ({ box }) => {
     const WIP = {
         title: lang === 'En' ? 'TicTacToe' : 'Tres en linea',
         subtitle: lang === 'En' ? 'Online mini game' : 'Mini juego online',
-        text: lang === 'En' ? 'Project exploring the posibilities given by web sockets.' : 'Proyecto que exploralas posibilidades proporcionadas por los web sockets.',
+        text: lang === 'En' ? 'Project exploring the posibilities given by web sockets.' : 'Proyecto que explora las posibilidades proporcionadas por los web sockets.',
         img: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1666385391/portfolio-preview/SURRPdY_qdpgak.gif',
         repo: 'https://github.com/FabricioJRepetto/chat-io',
         earlyDeploy: ''
