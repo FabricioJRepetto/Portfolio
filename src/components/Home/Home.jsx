@@ -34,10 +34,9 @@ const Home = () => {
 
         root.style.setProperty('--primary', themes[theme].p);
         root.style.setProperty('--secondary', themes[theme].s);
-        root.style.setProperty('--o', themes[theme].o);
 
         theme === 'light' ? setTheme('dark') : setTheme('light');
-    }   
+    }
 
     const transition = (param) => {
         setMenu(false)
@@ -45,9 +44,9 @@ const Home = () => {
         setTimeout(() => {
             setSection(param)
         }, 1000);
-     }
+    }
 
-     const backToHome = () => { 
+    const backToHome = () => {
         if (box === 'c') {
             setBox('aux')
             setTimeout(() => {
@@ -62,63 +61,63 @@ const Home = () => {
                 setSection('h')
             }, 1000);
         }
-      }    
+    }
 
-  return (
-    <div className={`home-container slide-in`}>
+    return (
+        <div className={`home-container slide-in`}>
 
-        <div className='fixed-bar'>
-            <div className='fixed-bar-name'>
-                <h1>Fabricio Repetto </h1>
-                {lang === 'En'
-                    ?<p>Front end developer</p>
-                    :<p>Desarrollador front end</p>}
+            <div className='fixed-bar'>
+                <div className='fixed-bar-name'>
+                    <h1>Fabricio Repetto </h1>
+                    {lang === 'En'
+                        ? <p>Front end developer</p>
+                        : <p>Desarrollador front end</p>}
+                </div>
+                <span>
+                    <HomeButton section={box} goHome={backToHome} />
+                    <ThemeButton theme={theme} change={changeTheme} />
+                    <LanguageButton />
+                </span>
+                <div className='fixed-bar-bg'></div>
             </div>
-            <span>
-                <HomeButton section={box} goHome={backToHome}/>
-                <ThemeButton theme={theme} change={changeTheme}/>
-                <LanguageButton />
-            </span>
-            <div className='fixed-bar-bg'></div>
+
+            <div className={`home-side-box box-${box}-position`}>
+                {(box === 'h' || box === 'a') &&
+                    <div className='home-side-box-text-container'>
+                        <h1>Fabricio Repetto</h1>
+                        {lang === 'En'
+                            ? <p>Front end developer</p>
+                            : <p>Desarrollador front end</p>}
+                    </div>}
+            </div>
+
+            <div className='home-menu'>
+                <div onClick={() => transition('p')}
+                    className={`${!menu && 'menu-gone-style'}`}>
+                    {lang === 'En'
+                        ? <p>Projects</p>
+                        : <p>Proyectos</p>}
+                </div>
+                <div onClick={() => transition('a')}
+                    className={`${!menu && 'menu-gone-style'}`}>
+                    {lang === 'En'
+                        ? <p>About</p>
+                        : <p>Sobre mí</p>}
+                </div>
+                <div onClick={() => transition('c')}
+                    className={`${!menu && 'menu-gone-style'}`}>
+                    {lang === 'En'
+                        ? <p>Contact</p>
+                        : <p>Contacto</p>}
+                </div>
+            </div>
+
+            {(section === 'p' || box === 'p') && <Projects box={box} />}
+            {(section === 'a' || box === 'a') && <About box={box} />}
+            {(section === 'c' || box === 'c') && <Contact box={box} />}
+
         </div>
-
-        <div className={`home-side-box box-${box}-position`}>
-            {(box === 'h' || box === 'a') && 
-            <div className='home-side-box-text-container'>
-                <h1>Fabricio Repetto</h1>
-                {lang === 'En'
-                    ?<p>Front end developer</p>
-                    :<p>Desarrollador front end</p>}
-            </div>}
-        </div>
-        
-        <div className='home-menu'>
-            <div onClick={()=>transition('p')} 
-                className={`${!menu && 'menu-gone-style'}`}>
-                {lang === 'En'
-                    ?<p>Projects</p>
-                    :<p>Proyectos</p>}
-            </div>
-            <div onClick={()=>transition('a')} 
-                className={`${!menu && 'menu-gone-style'}`}>
-                {lang === 'En'
-                    ?<p>About</p>
-                    :<p>Sobre mí</p>}
-            </div>
-           <div onClick={()=>transition('c')} 
-                className={`${!menu && 'menu-gone-style'}`}>
-                {lang === 'En'
-                    ?<p>Contact</p>
-                    :<p>Contacto</p>}
-            </div>
-        </div>
-
-        {(section === 'p' || box === 'p') && <Projects box={box}/>}
-        {(section === 'a' || box === 'a') && <About box={box}/>}
-        {(section === 'c' || box === 'c') && <Contact box={box}/>}
-
-    </div>
-  )
+    )
 }
 
 export default Home

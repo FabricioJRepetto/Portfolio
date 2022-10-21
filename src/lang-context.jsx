@@ -27,7 +27,7 @@ function LangProvider({children}) {
 function useLang() {
   const context = useContext(LangContext)
   if (context === undefined) {
-    throw new Error('useCount must be used within a CountProvider')
+    throw new Error('useLang must be used within a LangProvider')
   }
   return context
 }

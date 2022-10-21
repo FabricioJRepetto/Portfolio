@@ -7,7 +7,7 @@ const LanguageButton = () => {
     const { dispatch, state: { lang } } = useLang();
     
     const updateLang = () => { 
-        dispatch({type: 'change'});
+        dispatch({type: 'change'});        
     }
 
   return (
