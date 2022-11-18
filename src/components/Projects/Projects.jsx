@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react'
 import ProjectsCards from './ProjectsCards';
 import WipCard from './WipCard';
+import Tictactoe from "./details/Tictactoe";
 import Provider from './details/Provider';
 import Dogs from './details/Dogs';
 import { useLang } from '../../lang-context';
-
 import './Projects.css'
 
 const Projects = ({ box }) => {
@@ -27,7 +27,7 @@ const Projects = ({ box }) => {
 
     const PROJECTS = [
         {
-            title: lang === 'En' ? 'TicTacToe' : 'Tres en linea',
+            title: 'TicTacToe Io',
             subtitle: lang === 'En' ? 'Online mini game' : 'Mini juego online',
             text: lang === 'En' ? 'Project exploring the posibilities given by web sockets.' : 'Proyecto que exploralas posibilidades proporcionadas por los web sockets.',
             link: 'https://tictactoeio.vercel.app',
@@ -95,6 +95,7 @@ const Projects = ({ box }) => {
             </div>
 
             {mounted && <div className="projects-thread" ref={thread}></div>}
+            {details === 'TicTacToe Io' && <Tictactoe close={() => setDetails(false)} />}
             {details === 'Provider store' && <Provider close={() => setDetails(false)} />}
             {details === 'Dog House' && <Dogs close={() => setDetails(false)} />}
         </div>
