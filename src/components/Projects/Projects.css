@@ -165,8 +165,9 @@
 
 /*::: HILO :::*/
 .projects-thread {
+    --i: 1;
     position: absolute;
-    height: calc((2rem + 15rem) * 2 + 10vh + 3vh);
+    height: calc((2rem + 15rem) * var(--i) + 10vh + 3vh);
     /*? tamaño total de la card * cantidad de cards + tamaño total del header */
     width: 1rem;
     top: calc((80vh * 0.41) + 10vh);
