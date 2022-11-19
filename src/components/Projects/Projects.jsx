@@ -24,7 +24,7 @@ const Projects = ({ box }) => {
     //     repo: '',
     //     earlyDeploy: ''
     // }
-
+    
     const PROJECTS = [
         {
             title: 'TicTacToe Io',
