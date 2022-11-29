@@ -64,7 +64,7 @@ const Tictactoe = ({ close }) => {
                                 This project is ment to explore the posibilities given by full-duplex connections. Using WebSockets (Socket.Io), I developed an online mini game, TicTacToe, and a simple chat.
                             </p>
                             : <p>
-                                La finalidad de este proyecto es explorar las posibilidades ofrecidas por la conección bidireccional. Utilizando WebSockets (Socket.Io), desarrollé un mini juego online, tres en linea, y un chat simple.
+                                La finalidad de este proyecto es explorar las posibilidades ofrecidas por la conexión bidireccional. Utilizando WebSockets (Socket.Io), desarrollé un mini juego online, tres en linea, y un chat simple.
                             </p>}
                         <div className='p-details-img-container'>
                             <img src="https://res.cloudinary.com/dsyjj0sch/image/upload/v1668812932/portfolio-preview/ezgif-1-97ea9f8423_yppw9e.gif" alt="" />
