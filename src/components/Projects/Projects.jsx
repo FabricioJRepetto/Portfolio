@@ -29,7 +29,7 @@ const Projects = ({ box }) => {
         {
             title: 'TicTacToe Io',
             subtitle: lang === 'En' ? 'Online mini game' : 'Mini juego online',
-            text: lang === 'En' ? 'Project exploring the posibilities given by web sockets.' : 'Proyecto que exploralas posibilidades proporcionadas por los web sockets.',
+            text: lang === 'En' ? 'Project exploring the posibilities given by web sockets.' : 'Proyecto que explora las posibilidades proporcionadas por los web sockets.',
             link: 'https://tictactoeio.vercel.app',
             img: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1668806564/portfolio-preview/tictactoe_cikpfc.gif',
             index: 0
