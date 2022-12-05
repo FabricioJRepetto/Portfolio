@@ -5,6 +5,7 @@ import Tictactoe from "./details/Tictactoe";
 import Provider from './details/Provider';
 import Dogs from './details/Dogs';
 import { useLang } from '../../lang-context';
+
 import './Projects.css'
 
 const Projects = ({ box }) => {
@@ -15,15 +16,15 @@ const Projects = ({ box }) => {
 
     const { state: { lang } } = useLang();
 
-    const WIP = false
-    // {
-    //     title: lang === 'En' ? '' : '',
-    //     subtitle: lang === 'En' ? '' : '',
-    //     text: lang === 'En' ? '' : '',
-    //     img: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1666385391/portfolio-preview/SURRPdY_qdpgak.gif',
-    //     repo: '',
-    //     earlyDeploy: ''
-    // }
+    //? const WIP = false
+    const WIP = {
+        title: lang === 'En' ? 'Mutant Image' : 'Mutant Image',
+        subtitle: lang === 'En' ? 'SPA' : 'SPA, ',
+        text: lang === 'En' ? 'Image manipulation' : 'Manipulación de imagenes',
+        img: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1666385391/portfolio-preview/SURRPdY_qdpgak.gif',
+        repo: '',
+        earlyDeploy: ''
+    }
 
     const PROJECTS = [
         {
