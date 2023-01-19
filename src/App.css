@@ -9,7 +9,7 @@
     width: 100vw;
     height: 100vh;
     pointer-events: none;
-    background: linear-gradient(155deg, rgba(255,255,255,.25) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,.35) 100%);
+    background: linear-gradient(155deg, rgba(255, 255, 255, .25) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, .35) 100%);
     background-blend-mode: screen;
 }
 
@@ -28,34 +28,66 @@
     opacity: .17;
     pointer-events: none;
 }
+
 @keyframes grain {
-    0% {transform: translate(0%, 0%)}
-    10% {transform: translate(-10%, 5%)}
-    20% {transform: translate(5%, -5%)}
-    30% {transform: translate(15%, 0%)}
-    40% {transform: translate(0%, 15%)}
-    50% {transform: translate(-5%, 10%)}
-    60% {transform: translate(-15%, -5%)}
-    70% {transform: translate(5%, 10%)}
-    80% {transform: translate(-10%, -5%)}
-    90% {transform: translate(0%, -15%)}
-    100% {transform: translate(10%, 10%)}
+    0% {
+        transform: translate(0%, 0%)
+    }
+
+    10% {
+        transform: translate(-10%, 5%)
+    }
+
+    20% {
+        transform: translate(5%, -5%)
+    }
+
+    30% {
+        transform: translate(15%, 0%)
+    }
+
+    40% {
+        transform: translate(0%, 15%)
+    }
+
+    50% {
+        transform: translate(-5%, 10%)
+    }
+
+    60% {
+        transform: translate(-15%, -5%)
+    }
+
+    70% {
+        transform: translate(5%, 10%)
+    }
+
+    80% {
+        transform: translate(-10%, -5%)
+    }
+
+    90% {
+        transform: translate(0%, -15%)
+    }
+
+    100% {
+        transform: translate(10%, 10%)
+    }
 }
 
 .slide-in {
-    animation: slide-in 1s ease;
+    animation: slide-in .5s ease;
 }
 
-@keyframes slide-in {    
+@keyframes slide-in {
     0% {
-        transform: translate(100%) scale(95%)
+        transform: scale(95%);
+        opacity: 0;
+        filter: blur(20px);
     }
-    30% {
-        opacity: .5;
-        filter:blur(20px);
-        transform: translate(0%) scale(95%)
-    }
+
     100% {
+        opacity: 1;
         transform: scale(100%)
     }
 }

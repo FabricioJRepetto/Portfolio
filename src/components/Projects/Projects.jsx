@@ -5,7 +5,9 @@ import Tictactoe from "./details/Tictactoe";
 import Provider from './details/Provider';
 import Dogs from './details/Dogs';
 import { useLang } from '../../lang-context';
+
 import './Projects.css'
+import DietMate from './details/DietMate';
 
 const Projects = ({ box }) => {
     const thread = useRef(null)
@@ -15,17 +17,25 @@ const Projects = ({ box }) => {
 
     const { state: { lang } } = useLang();
 
-    const WIP = false
-    // {
-    //     title: lang === 'En' ? '' : '',
-    //     subtitle: lang === 'En' ? '' : '',
-    //     text: lang === 'En' ? '' : '',
-    //     img: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1666385391/portfolio-preview/SURRPdY_qdpgak.gif',
-    //     repo: '',
-    //     earlyDeploy: ''
-    // }
-    
+    //? const WIP = false
+    const WIP = {
+        title: lang === 'En' ? 'Mutant Image' : 'Mutant Image',
+        subtitle: lang === 'En' ? 'SPA' : 'SPA, ',
+        text: lang === 'En' ? 'Image manipulation' : 'Manipulación de imagenes',
+        img: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1666385391/portfolio-preview/SURRPdY_qdpgak.gif',
+        repo: '',
+        earlyDeploy: ''
+    }
+
     const PROJECTS = [
+        {
+            title: 'Diet Mate',
+            subtitle: lang === 'En' ? 'Meals organizer' : 'Organizador de comidas',
+            text: lang === 'En' ? 'App to organize your meals and achieve a balanced diet.' : 'App para organizar tus comidas y conseguir una dieta balanceada.',
+            link: 'https://weekly-diet.vercel.app',
+            img: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1674140627/portfolio-preview/workout_card_gmpwqy.gif',
+            index: 0
+        },
         {
             title: 'TicTacToe Io',
             subtitle: lang === 'En' ? 'Online mini game' : 'Mini juego online',
@@ -95,6 +105,7 @@ const Projects = ({ box }) => {
             </div>
 
             {mounted && <div className="projects-thread" ref={thread}></div>}
+            {details === 'Diet Mate' && <DietMate close={() => setDetails(false)} />}
             {details === 'TicTacToe Io' && <Tictactoe close={() => setDetails(false)} />}
             {details === 'Provider store' && <Provider close={() => setDetails(false)} />}
             {details === 'Dog House' && <Dogs close={() => setDetails(false)} />}
