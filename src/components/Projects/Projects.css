@@ -120,14 +120,17 @@
 
 .projects-cards img {
     margin: 1rem;
-    max-height: 15rem;
+    max-height: 100%;
     width: auto;
 }
 
 .p-card-img-container {
     position: relative;
-    width: fit-content;
-    height: fit-content;
+    display: flex;
+    justify-content: center;
+    /* width: fit-content; */
+    height: 15rem;
+    aspect-ratio: 300/169;
     cursor: pointer;
 }
 
@@ -165,7 +168,7 @@
 
 /*::: HILO :::*/
 .projects-thread {
-    --i: 1;
+    --i: ;
     position: absolute;
     height: calc((2rem + 15rem) * var(--i) + 10vh + 3vh);
     /*? tamaño total de la card * cantidad de cards + tamaño total del header */

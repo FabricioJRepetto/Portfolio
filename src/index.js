@@ -5,7 +5,6 @@ import { LangProvider } from './lang-context';
 
 import './index.css';
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <LangProvider>
