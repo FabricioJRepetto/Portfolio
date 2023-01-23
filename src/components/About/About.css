@@ -10,6 +10,7 @@
     z-index: 10;
     transition: width 1s cubic-bezier(0.25, 1, 0.5, 1);
 }
+
 .box-about-open {
     width: 90vw;
 }
@@ -23,6 +24,7 @@
     margin: 10vh auto;
     overflow-y: clip;
 }
+
 .about-scroll-bar {
     position: absolute;
     height: 50px;
@@ -30,6 +32,7 @@
     background-color: var(--primary);
     right: -.5vw;
 }
+
 .about-content {
     display: flex;
     flex-direction: column;
@@ -40,9 +43,11 @@
     overflow-y: scroll;
     transition: opacity .3s ease;
 }
+
 .about-content-visible {
     opacity: 1;
 }
+
 .about-text {
     margin-bottom: 3rem;
     font-size: 1.5rem;
@@ -56,6 +61,7 @@
     justify-content: center;
     height: fit-content;
 }
+
 .skill-card {
     width: auto;
     height: 2rem;
@@ -75,6 +81,7 @@
     bottom: 15vh;
     right: 8vw;
 }
+
 .about-images {
     position: relative;
     height: fit-content;
@@ -82,9 +89,10 @@
     width: 5rem;
     max-height: 5rem;
     max-width: 5rem;
-    
+
 }
-.about-images > div {
+
+.about-images>div {
     opacity: 0;
     position: absolute;
     height: 5rem;
@@ -93,49 +101,59 @@
     max-width: 5rem;
     transition: opacity .35s ease;
 }
+
 .about-img-visible {
     opacity: 1 !important;
 }
+
 .logo-0 {
     mask-image: url('https://res.cloudinary.com/dsyjj0sch/image/upload/v1664731758/logos/react_logo_icon_144942_s39yak.png');
     background-color: var(--primary);
     mask-size: contain;
 }
+
 .logo-1 {
     mask-image: url('https://res.cloudinary.com/dsyjj0sch/image/upload/v1664731758/logos/redux_icon_132038_oxunha.png');
     background-color: var(--primary);
     mask-size: contain;
 }
+
 .logo-2 {
     mask-image: url('https://res.cloudinary.com/dsyjj0sch/image/upload/v1664732208/logos/nodejs-logo_txb8hq.png');
     background-color: var(--primary);
     mask-size: contain;
 }
+
 .logo-3 {
     mask-image: url('https://res.cloudinary.com/dsyjj0sch/image/upload/v1664731759/logos/express_original_logo_icon_146527_wr3iov.png');
     background-color: var(--primary);
     mask-size: contain;
 }
+
 .logo-4 {
     mask-image: url('https://res.cloudinary.com/dsyjj0sch/image/upload/v1664732027/logos/mongo_db_logo_diovkg.png');
     background-color: var(--primary);
     mask-size: contain;
 }
+
 .logo-5 {
     mask-image: url('https://res.cloudinary.com/dsyjj0sch/image/upload/v1665008173/logos/dbs-postgresql_icon-icons.com_50907_ntbipk.png');
     background-color: var(--primary);
     mask-size: contain;
 }
+
 .logo-6 {
     mask-image: url('https://res.cloudinary.com/dsyjj0sch/image/upload/v1665082332/logos/sequelize_zfzkz9.png');
     background-color: var(--primary);
     mask-size: contain;
 }
+
 .logo-7 {
     mask-image: url('https://res.cloudinary.com/dsyjj0sch/image/upload/v1665008173/logos/adb-photoshop_icon-icons.com_50960_ln8civ.png');
     background-color: var(--primary);
     mask-size: contain;
 }
+
 .logo-8 {
     mask-image: url('https://res.cloudinary.com/dsyjj0sch/image/upload/v1665008173/logos/adb-illustrator_icon-icons.com_50964_wsxwi0.png');
     background-color: var(--primary);
@@ -146,15 +164,19 @@
     .box-about {
         margin: 5vh 0;
     }
+
     .about-text-container {
         justify-content: center;
     }
+
     .about-text {
         font-size: 5vw;
     }
+
     .skills-container {
         padding: 0;
     }
+
     .skill-card {
         height: auto;
         padding: 0 .3rem;
@@ -163,4 +185,16 @@
         font-weight: 400;
         border-radius: .3rem;
     }
+}
+
+.about-resume-download {
+    position: absolute;
+    bottom: 17vh;
+    right: 15vw;
+    text-decoration: none;
+}
+
+.about-resume-download a {
+    color: var(--primary);
+    border-bottom: 1px dashed var(--primary);
 }
