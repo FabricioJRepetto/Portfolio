@@ -70,8 +70,8 @@ const Home = () => {
                 <div className='fixed-bar-name'>
                     <h1>Fabricio Repetto </h1>
                     {lang === 'En'
-                        ? <p>Front end developer</p>
-                        : <p>Desarrollador front end</p>}
+                        ? <p>Fullstack developer</p>
+                        : <p>Desarrollador fullstack</p>}
                 </div>
                 <span>
                     <HomeButton section={box} goHome={backToHome} />
@@ -86,8 +86,8 @@ const Home = () => {
                     <div className='home-side-box-text-container'>
                         <h1>Fabricio Repetto</h1>
                         {lang === 'En'
-                            ? <p>Front end developer</p>
-                            : <p>Desarrollador front end</p>}
+                            ? <p>Fullstack developer</p>
+                            : <p>Desarrollador fullstack</p>}
                     </div>}
             </div>
 
