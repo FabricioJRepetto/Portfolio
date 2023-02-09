@@ -18,14 +18,22 @@ const Projects = ({ box }) => {
     const { state: { lang } } = useLang();
 
     //? const WIP = false
-    const WIP = {
+    const WIP = [{
+        title: lang === 'En' ? 'Hotel Management System' : 'Sistema de Gestión para Hotel',
+        subtitle: lang === 'En' ? 'RESTful API' : 'RESTful API',
+        text: lang === 'En' ? 'Database and UI design for hotel management system, with user role gerarchy.' : 'Diseño de base de datos y UI para sistema de gestión de un hotel, con gerarquía de roles para usuarios.',
+        img: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1666385391/portfolio-preview/SURRPdY_qdpgak.gif',
+        repo: '',
+        earlyDeploy: ''
+    },
+    {
         title: lang === 'En' ? 'Mutant Image' : 'Mutant Image',
         subtitle: lang === 'En' ? 'SPA' : 'SPA, ',
         text: lang === 'En' ? 'Image manipulation' : 'Manipulación de imagenes',
         img: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1666385391/portfolio-preview/SURRPdY_qdpgak.gif',
         repo: '',
         earlyDeploy: ''
-    }
+    }]
 
     const PROJECTS = [
         {
@@ -100,7 +108,9 @@ const Projects = ({ box }) => {
                             ? 'Now developing...'
                             : 'En desarrollo...'
                         }</h1>
-                        <WipCard data={WIP} lang={lang} />
+                        {WIP.map(e => (
+                            <WipCard data={e} lang={lang} />
+                        ))}
                     </div>}
             </div>
 
