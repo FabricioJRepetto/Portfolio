@@ -8,6 +8,7 @@ import { useLang } from '../../lang-context';
 
 import './Projects.css'
 import DietMate from './details/DietMate';
+import ClaritaSystem from './details/ClaritaSystem';
 
 const Projects = ({ box }) => {
     const thread = useRef(null)
@@ -18,31 +19,32 @@ const Projects = ({ box }) => {
     const { state: { lang } } = useLang();
 
     //? const WIP = false
-    const WIP = [{
-        title: lang === 'En' ? 'Hotel Management System' : 'Sistema de Gestión para Hotel',
-        subtitle: lang === 'En' ? 'RESTful API' : 'RESTful API',
-        text: lang === 'En' ? 'Database and UI design for hotel management system, with user role gerarchy.' : 'Diseño de base de datos y UI para sistema de gestión de un hotel, con gerarquía de roles para usuarios.',
-        img: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1666385391/portfolio-preview/SURRPdY_qdpgak.gif',
-        repo: '',
-        earlyDeploy: ''
-    },
-    {
-        title: lang === 'En' ? 'Mutant Image' : 'Mutant Image',
-        subtitle: lang === 'En' ? 'SPA' : 'SPA, ',
-        text: lang === 'En' ? 'Image manipulation' : 'Manipulación de imagenes',
-        img: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1666385391/portfolio-preview/SURRPdY_qdpgak.gif',
-        repo: '',
-        earlyDeploy: ''
-    }]
+    const WIP = [
+        {
+            title: lang === 'En' ? 'Mutant Image' : 'Mutant Image',
+            subtitle: lang === 'En' ? 'SPA' : 'SPA, ',
+            text: lang === 'En' ? 'Image manipulation' : 'Manipulación de imagenes',
+            img: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1666385391/portfolio-preview/SURRPdY_qdpgak.gif',
+            repo: '',
+            earlyDeploy: ''
+        }]
 
     const PROJECTS = [
+        {
+            title: lang === 'En' ? 'Hotel Management System' : 'Sistema de Gestión Hotelera',
+            subtitle: 'SPA + RESTful API',
+            text: lang === 'En' ? 'Client Project. Database and UI design, applying SOLID principles, for hotel management system with user role gerarchy, clients, booking and finance records.' : 'Proyecto para cliente. Diseño de base de datos y UI aplicando principios SOLID, para sistema de gestión de un hotel, con gerarquía de roles para usuarios, registro de clientes, reservas y finanzas.',
+            link: 'https://github.com/FabricioJRepetto/clarita-frontend',
+            img: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1678576341/portfolio-preview/ezgif-1-cfc7995002_lficv6.gif',
+            index: 0
+        },
         {
             title: 'Diet Mate',
             subtitle: lang === 'En' ? 'Meals organizer' : 'Organizador de comidas',
             text: lang === 'En' ? 'App to organize your meals and achieve a balanced diet.' : 'App para organizar tus comidas y conseguir una dieta balanceada.',
             link: 'https://weekly-diet.vercel.app',
             img: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1674140627/portfolio-preview/workout_card_gmpwqy.gif',
-            index: 0
+            index: 1
         },
         {
             title: 'TicTacToe Io',
@@ -50,7 +52,7 @@ const Projects = ({ box }) => {
             text: lang === 'En' ? 'Project exploring the posibilities given by web sockets.' : 'Proyecto que exploralas posibilidades proporcionadas por los web sockets.',
             link: 'https://tictactoeio.vercel.app',
             img: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1668806564/portfolio-preview/tictactoe_cikpfc.gif',
-            index: 0
+            index: 2
         },
         {
             title: 'Provider store',
@@ -58,7 +60,7 @@ const Projects = ({ box }) => {
             text: lang === 'En' ? 'Team project. User acount creation and management. Payments.' : 'Proyecto de equipo. Creación y administración de cuentas de usuario. Pagos.',
             link: 'https://providerstore.vercel.app',
             img: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1665013564/portfolio-preview/provider_dqwgm4.gif',
-            index: 1
+            index: 3
         },
         {
             title: 'Dog House',
@@ -66,13 +68,12 @@ const Projects = ({ box }) => {
             text: lang === 'En' ? 'Database and multiple API comsumption. CRUD.' : 'Consumo de multiples API y base de datos. CRUD.',
             link: 'https://the-dog-house.vercel.app',
             img: 'https://res.cloudinary.com/dsyjj0sch/image/upload/v1665013245/portfolio-preview/dog_house_favapn.gif',
-            index: 2
+            index: 4
         }
     ]
 
     useEffect(() => {
         if (thread.current) thread.current.style.setProperty('--i', PROJECTS.length)
-
         // eslint-disable-next-line
     }, [thread.current])
 
@@ -115,6 +116,9 @@ const Projects = ({ box }) => {
             </div>
 
             {mounted && <div className="projects-thread" ref={thread}></div>}
+            {(details === 'Hotel Management System' ||
+                details === 'Sistema de Gestión Hotelera') &&
+                <ClaritaSystem close={() => setDetails(false)} />}
             {details === 'Diet Mate' && <DietMate close={() => setDetails(false)} />}
             {details === 'TicTacToe Io' && <Tictactoe close={() => setDetails(false)} />}
             {details === 'Provider store' && <Provider close={() => setDetails(false)} />}
@@ -124,3 +128,5 @@ const Projects = ({ box }) => {
 }
 
 export default Projects
+
+/*'Hotel Management System' : 'Sistema de Gestión Hotelera' */
